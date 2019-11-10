@@ -1,11 +1,11 @@
 import React from "react"
 import classes from "./Homepage.module.css"
-import PlatformCategory from "./platformCategory/PlatformCategory"
+import PlatformCategories from "./platformCategories/PlatformCategories"
 
 const homepage = () => {
   return (
     <div className={classes.homepage}>
-      <PlatformCategory />
+      <PlatformCategories />
     </div>
   )
 }
