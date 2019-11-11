@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom"
 
 import Homepage from "./components/Homepage"
 import Navigation from "./components/navigation/Navigation"
+import Category from "./components/platformCategories/category/Category"
 
 import "./App.css"
 
@@ -14,6 +15,12 @@ function App() {
         <Switch>
           <Route exact path='/'>
             <Homepage />
+          </Route>
+          <Route exact path='/platforms'>
+            <Homepage />
+          </Route>
+          <Route exact path='/platforms/:platform'>
+            <Category />
           </Route>
         </Switch>
       </div>

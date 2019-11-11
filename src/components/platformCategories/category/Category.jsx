@@ -1,13 +1,16 @@
 import React from "react"
 import classes from "./Category.module.css"
-
+import { withRouter } from "react-router"
+import { Link } from "react-router-dom"
 const Category = props => {
+  console.log(props.match)
   return (
-    <div className={classes.Category}>
-      {props.name}
-      <div>picture</div>
-    </div>
+    <Link to={`/platform/${props.url}`} className={classes.Category}>
+      <div>
+        {props.name}
+        <div>{props.name}</div>
+      </div>
+    </Link>
   )
 }
-
-export default Category
+export default withRouter(Category)

@@ -1,16 +1,16 @@
 import React, { Component } from "react"
 import classes from "./PlatformCategories.module.css"
 import Category from "./category/Category"
-import { BASE_URL, API_KEY } from "../../.config"
+import { API_KEY } from "../../.config"
 import axios from "axios"
 class PlatformCategory extends Component {
   state = {
     categories: [
-      { name: "PC" },
-      { name: "Playstation" },
-      { name: "Xbox" },
-      { name: "Nintendo" },
-      { name: "etc" }
+      { name: "PC", url: "pc" },
+      { name: "Playstation", url: "playstation4" },
+      { name: "Xbox", url: "xbox" },
+      { name: "Nintendo", url: "nintendo" },
+      { name: "etc", url: "etc" }
     ],
     game: []
   }
@@ -40,7 +40,9 @@ class PlatformCategory extends Component {
 
   render() {
     const category = this.state.categories.map(category => {
-      return <Category key={category.name} name={category.name} />
+      return (
+        <Category key={category.name} name={category.name} url={category.url} />
+      )
     })
 
     return <div className={classes.PlatformCategory}>{category}</div>
