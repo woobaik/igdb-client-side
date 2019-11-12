@@ -1,0 +1,12 @@
+.gameDetail {
+  border: 1px solid black;
+  background-color: pink;
+  background-size: cover;
+  background-position: center;
+  max-width: 100%;
+  width: 264px;
+
+  height: 352px;
+
+  margin: 1vh auto;
+}

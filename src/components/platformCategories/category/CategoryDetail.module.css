@@ -1,0 +1,9 @@
+.CategoryDetail {
+  text-align: center;
+}
+
+.gameContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}

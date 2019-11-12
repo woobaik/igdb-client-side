@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom"
 
 import Homepage from "./components/Homepage"
 import Navigation from "./components/navigation/Navigation"
-import Category from "./components/platformCategories/category/Category"
+import CategoryDetail from "./components/platformCategories/category/CategoryDetail"
 
 import "./App.css"
 
@@ -20,7 +20,7 @@ function App() {
             <Homepage />
           </Route>
           <Route exact path='/platforms/:platform'>
-            <Category />
+            <CategoryDetail />
           </Route>
         </Switch>
       </div>

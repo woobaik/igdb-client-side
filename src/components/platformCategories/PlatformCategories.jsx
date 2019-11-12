@@ -16,24 +16,24 @@ class PlatformCategory extends Component {
   }
 
   componentDidMount() {
-    let today = new Date().getTime()
-    console.log(today)
-    axios({
-      url: "/release_dates",
-      method: "POST",
-      headers: {
-        Accept: "application/json",
-        "user-key": API_KEY
-      },
-      data: `fields game.name, game.release_dates, game.genres, game.slug, game.storyline, game.url; where game.platforms = 48 & date < ${today}; sort date desc;`
-    })
-      .then(response => {
-        console.log("games")
-        console.log(response.data)
-      })
-      .catch(err => {
-        console.error(err)
-      })
+    // let today = new Date().getTime()
+    // console.log(today)
+    // axios({
+    //   url: "/release_dates",
+    //   method: "POST",
+    //   headers: {
+    //     Accept: "application/json",
+    //     "user-key": API_KEY
+    //   },
+    //   data: `fields game.name, game.release_dates, game.genres, game.slug, game.storyline, game.url; where game.platforms = 48 & date < ${today}; sort date desc;`
+    // })
+    //   .then(response => {
+    //     console.log("games")
+    //     console.log(response.data)
+    //   })
+    //   .catch(err => {
+    //     console.error(err)
+    //   })
   }
 
   componentDidUpdate() {}
