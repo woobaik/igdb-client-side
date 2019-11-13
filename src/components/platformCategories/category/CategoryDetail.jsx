@@ -4,7 +4,7 @@ import axios from "axios"
 import { API_KEY } from "../../../.config"
 import comingSoon from "../../../assets/images/comingSoon.jpg"
 
-import GameDetail from "../../gameDetail/GameDetail"
+import GameDetail from "../../PlatformDetail/PlatformDetail"
 import classes from "./CategoryDetail.module.css"
 
 class categoryDetail extends Component {
@@ -37,7 +37,7 @@ class categoryDetail extends Component {
 
       case "xbox":
         console.log("Xbox IS DETECTED")
-        platformId = "11"
+        platformId = "12"
         break
 
       case "etc":
@@ -60,7 +60,11 @@ class categoryDetail extends Component {
       data:
         // fields *; where game.platforms = 48 & date < 1538129354; sort date desc;
 
-        `fields category,date,game, game.name, game.popularity, game.screenshots,game.cover.url,m,platform,y; where game.platforms = ${platformId} & date < ${todayMili}; sort date desc; limit 20;`
+        `fields category,date,game, game.name, game.popularity, 
+                game.screenshots,game.cover.url,m,platform,y; 
+          where game.platforms = ${platformId} & region = 2 
+                & date < ${todayMili} & game.popularity > 5; 
+          sort date desc; limit 20;`
     })
       .then(response => {
         this.setState({ games: response.data, loading: false })
@@ -74,9 +78,10 @@ class categoryDetail extends Component {
   gameContainer = () => {
     return this.state.games.map(({ game }) => {
       let coverUrl = game.cover ? game.cover.url : comingSoon
-
+      console.log(game.name, game.popularity)
       return (
         <GameDetail
+          popularity={game.popularity}
           key={game.id}
           name={game.name}
           cover={coverUrl}
