@@ -3,7 +3,6 @@ import classes from "./Category.module.css"
 import { withRouter } from "react-router"
 import { Link } from "react-router-dom"
 const Category = props => {
-  console.log(props.match)
   return (
     <Link to={`/platforms/${props.url}`} className={classes.Category}>
       <div>

@@ -4,7 +4,7 @@ import axios from "axios"
 import { API_KEY } from "../../../.config"
 import comingSoon from "../../../assets/images/comingSoon.jpg"
 
-import GameDetail from "../../PlatformDetail/PlatformDetail"
+import GamePreview from "../../GamePreview/GamePreview"
 import classes from "./CategoryDetail.module.css"
 
 class categoryDetail extends Component {
@@ -19,7 +19,7 @@ class categoryDetail extends Component {
     let platform = this.props.match.params.platform
     let platformId = ""
     let todayMili = new Date().getTime()
-    console.log(todayMili)
+
     switch (platform) {
       case "pc":
         console.log("PC IS DETECTED")
@@ -60,15 +60,14 @@ class categoryDetail extends Component {
       data:
         // fields *; where game.platforms = 48 & date < 1538129354; sort date desc;
 
-        `fields category,date,game, game.name, game.popularity, 
-                game.screenshots,game.cover.url,m,platform,y; 
+        `fields category,date,game, game.name, game.popularity, game.slug, 
+                game.screenshots, game.cover.url ,platform, game.slug; 
           where game.platforms = ${platformId} & region = 2 
                 & date < ${todayMili} & game.popularity > 5; 
           sort date desc; limit 20;`
     })
       .then(response => {
         this.setState({ games: response.data, loading: false })
-        console.log(this.state)
       })
       .catch(err => {
         console.error(err)
@@ -78,14 +77,15 @@ class categoryDetail extends Component {
   gameContainer = () => {
     return this.state.games.map(({ game }) => {
       let coverUrl = game.cover ? game.cover.url : comingSoon
-      console.log(game.name, game.popularity)
+
       return (
-        <GameDetail
+        <GamePreview
           popularity={game.popularity}
           key={game.id}
           name={game.name}
           cover={coverUrl}
-        ></GameDetail>
+          slug={game.slug}
+        ></GamePreview>
       )
     })
   }

@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom"
 import Homepage from "./components/Homepage"
 import Navigation from "./components/navigation/Navigation"
 import CategoryDetail from "./components/platformCategories/category/CategoryDetail"
-
+import GameDetail from "./components/GameDetail/GameDetail"
 import "./App.css"
 
 function App() {
@@ -21,6 +21,9 @@ function App() {
           </Route>
           <Route exact path='/platforms/:platform'>
             <CategoryDetail />
+          </Route>
+          <Route exact path='/platforms/:platform/:gameTitle'>
+            <GameDetail />>
           </Route>
         </Switch>
       </div>

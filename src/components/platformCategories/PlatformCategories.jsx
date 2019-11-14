@@ -1,8 +1,7 @@
 import React, { Component } from "react"
 import classes from "./PlatformCategories.module.css"
 import Category from "./category/Category"
-import { API_KEY } from "../../.config"
-import axios from "axios"
+
 class PlatformCategory extends Component {
   state = {
     categories: [
