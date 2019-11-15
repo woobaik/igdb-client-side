@@ -47,6 +47,39 @@ class categoryDetail extends Component {
       })
   }
 
+  componentDidUpdate(prevProps, prevState, snapShot) {
+    if (this.props.match.params.platform !== prevProps.match.params.platform) {
+      let platform = this.props.match.params.platform
+      let platformId = platformFinder(platform)
+      let todayMili = new Date().getTime()
+
+      this.setState({ categoryName: platform.toUpperCase() })
+
+      axios({
+        url: "/release_dates",
+        method: "POST",
+        headers: {
+          Accept: "application/json",
+          "user-key": API_KEY
+        },
+        data:
+          // fields *; where game.platforms = 48 & date < 1538129354; sort date desc;
+
+          `fields category,date,game, game.name, game.popularity, game.slug, 
+                game.screenshots, game.cover.url ,platform, game.slug; 
+          where game.platforms = ${platformId} & region = 2 
+                & date < ${todayMili} & game.popularity > 5; 
+          sort date desc; limit 20;`
+      })
+        .then(response => {
+          this.setState({ games: response.data, loading: false })
+        })
+        .catch(err => {
+          console.error(err)
+        })
+    }
+  }
+
   gameContainer = () => {
     return this.state.games.map(({ game }) => {
       let coverUrl = game.cover ? game.cover.url : comingSoon
@@ -63,10 +96,11 @@ class categoryDetail extends Component {
     })
   }
   render() {
+    console.log("PROPSSS", this.props)
     return (
       <div className={classes.CategoryDetail}>
         <div>CATEGORY DETAIL</div>
-        <div>NAME : {this.state.categoryName}</div>
+        <div>NAME : {this.props.match.params.platform}</div>
         <div className={classes.gameContainer}>
           {this.state.loading ? <div>LOADING</div> : this.gameContainer()}
         </div>

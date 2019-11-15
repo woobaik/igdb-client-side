@@ -1,7 +1,7 @@
 import React from "react"
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom"
 
-import Homepage from "./components/Homepage"
+import PlatformCategory from "./components/platformCategories/PlatformCategories"
 import Navigation from "./components/navigation/Navigation"
 import CategoryDetail from "./components/platformCategories/category/CategoryDetail"
 import GameDetail from "./components/GameDetail/GameDetail"
@@ -13,18 +13,14 @@ function App() {
       <div className='App'>
         <Navigation />
         <Switch>
-          <Route exact path='/'>
-            <Homepage />
-          </Route>
-          <Route exact path='/platforms'>
-            <Homepage />
-          </Route>
-          <Route exact path='/platforms/:platform'>
-            <CategoryDetail />
-          </Route>
-          <Route exact path='/platforms/:platform/:gameTitle'>
-            <GameDetail />
-          </Route>
+          <Route exact path='/platforms/:platform' component={CategoryDetail} />
+          >
+          <Route
+            exact
+            path='/platforms/:platform/:gameTitle'
+            component={GameDetail}
+          />
+          <Route exact path='/' component={PlatformCategory} />>
         </Switch>
       </div>
     </Router>

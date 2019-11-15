@@ -1,10 +1,24 @@
 import React from "react"
 import classes from "./Navigation.module.css"
-import { Link } from "react-router-dom"
+import { NavLink } from "react-router-dom"
 const navigation = () => {
   return (
     <div className={classes.Navigation}>
-      <Link to='/'>Navigation</Link>
+      <NavLink exact to='/'>
+        Navigation
+      </NavLink>
+      <NavLink exact to='/platforms/pc'>
+        PC
+      </NavLink>
+      <NavLink exact to='/platforms/playstation4'>
+        PS4
+      </NavLink>
+      <NavLink exact to='/platforms/xbox'>
+        Xbox
+      </NavLink>
+      <NavLink exact to='/platforms/nintendo'>
+        NINTENDO
+      </NavLink>
     </div>
   )
 }

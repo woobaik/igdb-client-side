@@ -30,6 +30,10 @@ class GameDetail extends React.Component {
       })
   }
 
+  componentWillUnmount() {
+    console.log("UNMOUNTING!!!")
+  }
+
   renderDetail() {
     if (this.state.loading) {
       return <div>ITS LOADING</div>
