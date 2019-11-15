@@ -23,7 +23,7 @@ function App() {
             <CategoryDetail />
           </Route>
           <Route exact path='/platforms/:platform/:gameTitle'>
-            <GameDetail />>
+            <GameDetail />
           </Route>
         </Switch>
       </div>

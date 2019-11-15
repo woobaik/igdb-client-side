@@ -3,8 +3,10 @@ import { withRouter } from "react-router"
 import axios from "axios"
 import { API_KEY } from "../../../.config"
 import comingSoon from "../../../assets/images/comingSoon.jpg"
+import platformFinder from "../../../script/platformFinder"
 
 import GamePreview from "../../GamePreview/GamePreview"
+
 import classes from "./CategoryDetail.module.css"
 
 class categoryDetail extends Component {
@@ -15,38 +17,9 @@ class categoryDetail extends Component {
   }
 
   componentDidMount() {
-    console.log(this.props.match)
     let platform = this.props.match.params.platform
-    let platformId = ""
+    let platformId = platformFinder(platform)
     let todayMili = new Date().getTime()
-
-    switch (platform) {
-      case "pc":
-        console.log("PC IS DETECTED")
-        platformId = "6"
-        break
-      case "playstation4":
-        console.log("PS4 IS DETECTED")
-        platformId = "48"
-        break
-
-      case "nintendo":
-        console.log("Nintendo IS DETECTED")
-        platformId = "130"
-        break
-
-      case "xbox":
-        console.log("Xbox IS DETECTED")
-        platformId = "12"
-        break
-
-      case "etc":
-        console.log("ETC IS DETECTED")
-        break
-      default:
-        platform = "No Match"
-        console.log("No Match man")
-    }
 
     this.setState({ categoryName: platform.toUpperCase() })
 
