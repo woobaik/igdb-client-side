@@ -53,7 +53,7 @@ class categoryDetail extends Component {
       let platformId = platformFinder(platform)
       let todayMili = new Date().getTime()
 
-      this.setState({ categoryName: platform.toUpperCase() })
+      this.setState({ categoryName: platform.toUpperCase(), loading: true })
 
       axios({
         url: "/release_dates",

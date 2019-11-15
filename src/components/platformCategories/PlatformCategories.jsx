@@ -5,11 +5,30 @@ import Category from "./category/Category"
 class PlatformCategory extends Component {
   state = {
     categories: [
-      { name: "PC", url: "pc" },
-      { name: "Playstation", url: "playstation4" },
-      { name: "Xbox", url: "xbox" },
-      { name: "Nintendo", url: "nintendo" },
-      { name: "etc", url: "etc" }
+      {
+        name: "PC",
+        url: "pc",
+        imageUrl:
+          "https://storage.googleapis.com/webdesignledger.pub.network/WDL/6f050e39-windows_10_logoblue.svg-copy_windows.jpg"
+      },
+      {
+        name: "Playstation",
+        url: "playstation4",
+        imageUrl:
+          "https://i.pinimg.com/originals/ca/be/7a/cabe7a7e2371300bc8efa3f19e4808a2.jpg"
+      },
+      {
+        name: "Xbox",
+        url: "xbox",
+        imageUrl:
+          "https://pmcvariety.files.wordpress.com/2014/03/xbox-logo1.jpg?w=994"
+      },
+      {
+        name: "Nintendo",
+        url: "nintendo",
+        imageUrl:
+          "https://imgix.bustle.com/mic/tjfwyfk8g5dphn7nbayunnvogynzaw409gary3xj2omqwsbrn2fcvjopsysstdez.jpg?w=1020&h=576&fit=crop&crop=faces&auto=format&q=70"
+      }
     ],
     game: []
   }
@@ -35,12 +54,15 @@ class PlatformCategory extends Component {
     //   })
   }
 
-  componentDidUpdate() {}
-
   render() {
     const category = this.state.categories.map(category => {
       return (
-        <Category key={category.name} name={category.name} url={category.url} />
+        <Category
+          key={category.name}
+          name={category.name}
+          url={category.url}
+          imageUrl={category.imageUrl}
+        />
       )
     })
 

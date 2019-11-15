@@ -4,19 +4,19 @@ import { NavLink } from "react-router-dom"
 const navigation = () => {
   return (
     <div className={classes.Navigation}>
-      <NavLink exact to='/'>
-        Navigation
+      <NavLink exact to='/' className={classes.navLink}>
+        WOOBAIK's Game Tracker
       </NavLink>
-      <NavLink exact to='/platforms/pc'>
+      <NavLink exact to='/platforms/pc' className={classes.navLink}>
         PC
       </NavLink>
-      <NavLink exact to='/platforms/playstation4'>
+      <NavLink exact to='/platforms/playstation4' className={classes.navLink}>
         PS4
       </NavLink>
-      <NavLink exact to='/platforms/xbox'>
+      <NavLink exact to='/platforms/xbox' className={classes.navLink}>
         Xbox
       </NavLink>
-      <NavLink exact to='/platforms/nintendo'>
+      <NavLink exact to='/platforms/nintendo' className={classes.navLink}>
         NINTENDO
       </NavLink>
     </div>

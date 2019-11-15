@@ -7,3 +7,9 @@
   font-size: 1.5rem;
   padding: 0.5rem;
 }
+
+.navLink {
+  margin: 0 1rem;
+  text-decoration: none;
+  color: white;
+}
