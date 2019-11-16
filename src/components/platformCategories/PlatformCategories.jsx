@@ -69,7 +69,6 @@ class PlatformCategory extends Component {
     return (
       <Fragment>
         <div className={classes.PlatformCategory}>Platform {category}</div>
-        <div>Featured game</div>
       </Fragment>
     )
   }
