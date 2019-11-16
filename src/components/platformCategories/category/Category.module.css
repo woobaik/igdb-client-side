@@ -1,12 +1,13 @@
 .Category {
   display: flex;
   height: 20rem;
-  width: 35%;
+  width: 300px;
   margin: 1rem;
   border-radius: 10px;
   position: relative;
   overflow: scroll;
   text-decoration: none;
+  min-width: 300px;
 }
 
 .platformImg {

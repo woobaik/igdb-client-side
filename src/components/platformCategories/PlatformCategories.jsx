@@ -1,4 +1,4 @@
-import React, { Component } from "react"
+import React, { Component, Fragment } from "react"
 import classes from "./PlatformCategories.module.css"
 import Category from "./category/Category"
 
@@ -66,7 +66,12 @@ class PlatformCategory extends Component {
       )
     })
 
-    return <div className={classes.PlatformCategory}>{category}</div>
+    return (
+      <Fragment>
+        <div className={classes.PlatformCategory}>Platform {category}</div>
+        <div>Featured game</div>
+      </Fragment>
+    )
   }
 }
 

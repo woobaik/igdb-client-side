@@ -1,15 +1,26 @@
 .Navigation {
   display: flex;
   align-items: center;
-  justify-content: center;
-  background-color: rgb(173, 118, 118);
+  justify-content: space-between;
+  background-color: #323a45;
+  flex: 4 1 auto;
   height: 3rem;
   font-size: 1.5rem;
   padding: 0.5rem;
+  font-family: "Poppins", sans-serif;
 }
 
 .navLink {
   margin: 0 1rem;
+  font-weight: 400;
   text-decoration: none;
   color: white;
+}
+
+.navLink:hover {
+  color: blueviolet;
+}
+
+.navLogo {
+  font-weight: 500;
 }
