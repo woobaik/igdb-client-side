@@ -2,7 +2,7 @@ import React from "react"
 import axios from "axios"
 import { API_KEY } from "../../.config"
 import { withRouter } from "react-router"
-
+import classes from "./GameDetail.module.css"
 import platformIdFinder from "../../script/platformFinder"
 class GameDetail extends React.Component {
   state = {
@@ -52,6 +52,7 @@ class GameDetail extends React.Component {
       })
       return (
         <div>
+          <div className={classes.coverImge}></div>
           <div>id : {gameDetails.id}</div>
           <div>name : {gameDetails.name}</div>
           <div>cover URL : {gameDetails.cover.url}</div>

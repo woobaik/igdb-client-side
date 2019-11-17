@@ -20,10 +20,9 @@ class SimpleSlider extends Component {
         "user-key": API_KEY
       },
       data:
-        "fields artworks,category,cover.url,genres,name,popularity,rating,rating_count,release_dates,slug,url; sort popularity desc; limit 12;"
+        "fields artworks,category,cover.url,genres.name,name,popularity,rating,rating_count,release_dates,slug,url; sort popularity desc; limit 12;"
     })
       .then(response => {
-        console.log(response.data)
         this.setState({ popularGames: response.data })
       })
       .catch(err => {
@@ -40,6 +39,8 @@ class SimpleSlider extends Component {
       return (
         <div className={classes.cover} key={game.id}>
           <div className={classes.coverImg} style={imgstyle}></div>
+          <div className={classes.coverTitle}>{game.name}</div>
+          <div className={classes.coverGenre}>{game.genres[0].name}</div>
         </div>
       )
     })
@@ -48,6 +49,7 @@ class SimpleSlider extends Component {
       dots: true,
       infinite: true,
       speed: 900,
+      auto: true,
       slidesToShow: 4,
       slidesToScroll: 4,
       initialSlide: 0,

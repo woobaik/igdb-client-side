@@ -1,4 +1,5 @@
 .Carousel {
+  box-sizing: border-box;
 }
 
 .cover {
@@ -15,7 +16,21 @@ h2 {
 }
 
 .coverImg {
-  height: 100%;
+  height: 90%;
   background-size: cover;
   background-position: center;
+}
+
+.coverTitle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 0.5rem;
+}
+
+.coverGenre {
+  color: darkgray;
+}
+
+.slider {
 }
