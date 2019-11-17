@@ -1,13 +1,18 @@
 import React, { Component } from "react"
 import Slider from "react-slick"
+
 import "slick-carousel/slick/slick.css"
 import "slick-carousel/slick/slick-theme.css"
 import classes from "./Carousel.module.css"
 import { Link } from "react-router-dom"
 import axios from "axios"
 import { API_KEY } from "../../../.config"
+
+import Loader from "../../UI/Loader"
+
 class SimpleSlider extends Component {
   state = {
+    loading: true,
     popularGames: []
   }
   //  getting popular games
@@ -23,7 +28,7 @@ class SimpleSlider extends Component {
         "fields artworks,category,cover.url,genres.name,name,popularity,rating,rating_count,release_dates,slug,url; sort popularity desc; limit 12;"
     })
       .then(response => {
-        this.setState({ popularGames: response.data })
+        this.setState({ popularGames: response.data, loading: false })
       })
       .catch(err => {
         console.error(err)
@@ -88,7 +93,13 @@ class SimpleSlider extends Component {
     return (
       <div className={classes.Carousel}>
         <h2> Popular Games Right Now</h2>
-        <Slider {...settings}>{popularGames}</Slider>
+        <div className={classes.transitionPage}>
+          {this.state.loading ? (
+            <Loader />
+          ) : (
+            <Slider {...settings}>{popularGames}</Slider>
+          )}
+        </div>
       </div>
     )
   }

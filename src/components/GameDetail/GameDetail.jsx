@@ -1,10 +1,12 @@
-import React from "react"
+import React, { Fragment } from "react"
 import axios from "axios"
 import { API_KEY } from "../../.config"
 import { withRouter } from "react-router"
 import classes from "./GameDetail.module.css"
+
 import platformIdFinder from "../../script/platformFinder"
 import GameDetailCard from "./GameDetailCard/GameDetailCard"
+import Loader from "../UI/Loader"
 class GameDetail extends React.Component {
   state = {
     gameDetail: [],
@@ -83,9 +85,10 @@ class GameDetail extends React.Component {
       )
     }
   }
-  render() {
+
+  renderWholeDetailPage() {
     return (
-      <div className={classes.GameDetail}>
+      <Fragment>
         <div>{this.renderDetail()}</div>
         <div className={classes.gameDetailCard}>
           <GameDetailCard
@@ -96,6 +99,14 @@ class GameDetail extends React.Component {
             }
           />
         </div>
+      </Fragment>
+    )
+  }
+
+  render() {
+    return (
+      <div className={classes.GameDetail}>
+        {this.state.loading ? <Loader /> : this.renderWholeDetailPage()}
       </div>
     )
   }

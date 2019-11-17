@@ -6,6 +6,7 @@ import comingSoon from "../../../assets/images/comingSoon.jpg"
 import platformFinder from "../../../script/platformFinder"
 
 import GamePreview from "../../GamePreview/GamePreview"
+import Loader from "../../UI/Loader"
 
 import classes from "./CategoryDetail.module.css"
 
@@ -101,7 +102,7 @@ class categoryDetail extends Component {
         <div>CATEGORY DETAIL</div>
         <div>NAME : {this.props.match.params.platform}</div>
         <div className={classes.gameContainer}>
-          {this.state.loading ? <div>LOADING</div> : this.gameContainer()}
+          {this.state.loading ? <Loader /> : this.gameContainer()}
         </div>
       </div>
     )
