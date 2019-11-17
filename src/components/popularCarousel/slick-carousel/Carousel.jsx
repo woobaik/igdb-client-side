@@ -3,7 +3,7 @@ import Slider from "react-slick"
 import "slick-carousel/slick/slick.css"
 import "slick-carousel/slick/slick-theme.css"
 import classes from "./Carousel.module.css"
-
+import { Link } from "react-router-dom"
 import axios from "axios"
 import { API_KEY } from "../../../.config"
 class SimpleSlider extends Component {
@@ -37,11 +37,15 @@ class SimpleSlider extends Component {
       const imgstyle = { backgroundImage: `url(${url})` }
 
       return (
-        <div className={classes.cover} key={game.id}>
+        <Link
+          className={classes.cover}
+          key={game.id}
+          to={`/games/${game.slug}`}
+        >
           <div className={classes.coverImg} style={imgstyle}></div>
           <div className={classes.coverTitle}>{game.name}</div>
           <div className={classes.coverGenre}>{game.genres[0].name}</div>
-        </div>
+        </Link>
       )
     })
 

@@ -96,7 +96,6 @@ class categoryDetail extends Component {
     })
   }
   render() {
-    console.log("PROPSSS", this.props)
     return (
       <div className={classes.CategoryDetail}>
         <div>CATEGORY DETAIL</div>

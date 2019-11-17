@@ -10,11 +10,11 @@ const gamePreview = ({ name, cover, match, history, slug }) => {
       .splice(2)
       .join("")
   coverImg = coverImg.replace("t_thumb", "t_1080p")
-
+  console.log(match)
   return (
     <div
       className={classes.PlatformDetail}
-      onClick={() => history.push(`${match.url}/${slug}`)}
+      onClick={() => history.push(`/games/${slug}`)}
     >
       <div
         className={classes.gameImage}

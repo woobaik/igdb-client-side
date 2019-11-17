@@ -21,7 +21,7 @@ class GameDetail extends React.Component {
         Accept: "application/json",
         "user-key": API_KEY
       },
-      data: `fields cover.url, id, name, genres.name, screenshots.url,summary, release_dates,platforms.name; where slug = "${this.props.match.params.gameTitle}" & platforms = ${platformId};`
+      data: `fields cover.url, id, name, genres.name, screenshots.url,summary, release_dates,platforms.name; where slug = "${this.props.match.params.gameTitle}";`
     })
       .then(response => {
         this.setState({ gameDetail: response.data, loading: false })

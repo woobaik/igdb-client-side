@@ -5,6 +5,8 @@
 .cover {
   height: 450px;
   width: 400px;
+  text-decoration: none;
+  color: black;
 }
 
 h2 {

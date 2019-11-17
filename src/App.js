@@ -21,6 +21,7 @@ function App() {
             path='/platforms/:platform/:gameTitle'
             component={GameDetail}
           />
+          <Route exact path='/games/:gameTitle' component={GameDetail}></Route>
           <Route exact path='/platforms' component={PlatformCategory} />>
           <Route exact path='/' component={HomePage} />>
         </Switch>
