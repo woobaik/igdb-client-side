@@ -1,0 +1,12 @@
+.gameDetailCard {
+  width: 264px;
+  height: 352px;
+  background-color: red;
+}
+
+.gameDetailImage {
+  width: 100%;
+  height: 100%;
+  background-position: center;
+  background-size: cover;
+}

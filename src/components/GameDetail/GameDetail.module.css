@@ -1,4 +1,25 @@
 .coverImg {
+  position: absolute;
+  top: 64px;
   height: 220px;
   width: 100%;
+  background-position: center;
+  background-size: cover;
+  opacity: 0.5;
+}
+
+.gameDetailCard {
+  top: 15%;
+  left: 5%;
+}
+
+@media (min-width: 1200px) {
+  .coverImg {
+    height: 440px;
+  }
+
+  .gameDetailCard {
+    top: 40%;
+    left: 10%;
+  }
 }

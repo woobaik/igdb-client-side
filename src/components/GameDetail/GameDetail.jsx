@@ -4,6 +4,7 @@ import { API_KEY } from "../../.config"
 import { withRouter } from "react-router"
 import classes from "./GameDetail.module.css"
 import platformIdFinder from "../../script/platformFinder"
+import GameDetailCard from "./GameDetailCard/GameDetailCard"
 class GameDetail extends React.Component {
   state = {
     gameDetail: [],
@@ -34,6 +35,18 @@ class GameDetail extends React.Component {
     console.log("UNMOUNTING!!!")
   }
 
+  gettingCoverStyle = () => {
+    let coverImageUrl =
+      "https:" +
+      this.state.gameDetail[0].screenshots[0].url.replace(
+        "t_thumb",
+        "t_screenshot_big"
+      )
+    let coverImageStyle = { backgroundImage: `url(${coverImageUrl})` }
+
+    return coverImageStyle
+  }
+
   renderDetail() {
     if (this.state.loading) {
       return <div>ITS LOADING</div>
@@ -50,9 +63,14 @@ class GameDetail extends React.Component {
       let genres = gameDetails.genres.map(genre => {
         return <div key={genre.name}>{genre.name}</div>
       })
+
       return (
         <div>
-          <div className={classes.coverImge}></div>
+          <div
+            className={classes.coverImg}
+            style={this.gettingCoverStyle()}
+          ></div>
+          <div>card</div>
           <div>id : {gameDetails.id}</div>
           <div>name : {gameDetails.name}</div>
           <div>cover URL : {gameDetails.cover.url}</div>
@@ -66,11 +84,18 @@ class GameDetail extends React.Component {
     }
   }
   render() {
-    console.log("State", this.state.gameDetail[0])
-
     return (
-      <div className='GameDetail'>
+      <div className={classes.GameDetail}>
         <div>{this.renderDetail()}</div>
+        <div className={classes.gameDetailCard}>
+          <GameDetailCard
+            coverUrl={
+              this.state.loading
+                ? "loading"
+                : this.state.gameDetail[0].cover.url
+            }
+          />
+        </div>
       </div>
     )
   }
