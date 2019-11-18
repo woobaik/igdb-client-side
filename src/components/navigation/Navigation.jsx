@@ -5,7 +5,7 @@ const navigation = () => {
   return (
     <div className={classes.Navigation}>
       <NavLink exact to='/' className={(classes.navLogo, classes.navLink)}>
-        WOOBAIK's Game Tracker
+        JBAIK
       </NavLink>
       <div className={classes.navLinks}>
         <NavLink exact to='/platforms/pc' className={classes.navLink}>

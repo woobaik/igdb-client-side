@@ -23,7 +23,7 @@ class GameDetail extends React.Component {
         Accept: "application/json",
         "user-key": API_KEY
       },
-      data: `fields cover.url, id, name, genres.name, screenshots.url,summary, release_dates,platforms.name; where slug = "${this.props.match.params.gameTitle}";`
+      data: `fields cover.url, id, name, genres.name, screenshots.url,summary, release_dates.date,release_dates.human ,platforms.name; where slug = "${this.props.match.params.gameTitle}";`
     })
       .then(response => {
         this.setState({ gameDetail: response.data, loading: false })
@@ -38,15 +38,32 @@ class GameDetail extends React.Component {
   }
 
   gettingCoverStyle = () => {
-    let coverImageUrl =
-      "https:" +
-      this.state.gameDetail[0].screenshots[0].url.replace(
-        "t_thumb",
-        "t_screenshot_big"
-      )
+    let coverImageUrl
+    if (this.state.gameDetail[0].screenshots) {
+      coverImageUrl =
+        "https:" +
+        this.state.gameDetail[0].screenshots[0].url.replace(
+          "t_thumb",
+          "t_screenshot_big"
+        )
+    } else {
+      return ""
+    }
+
     let coverImageStyle = { backgroundImage: `url(${coverImageUrl})` }
 
     return coverImageStyle
+  }
+
+  getReleaseDateString() {
+    let today13th = Date.now().toString()
+    let today10th = parseInt(today13th.slice(0, 10))
+
+    if (this.state.gameDetail[0].release_dates[0].date <= today10th) {
+      return "Released on "
+    } else {
+      return "Will Be Released on "
+    }
   }
 
   renderDetail() {
@@ -54,9 +71,14 @@ class GameDetail extends React.Component {
       return <div>ITS LOADING</div>
     } else {
       let gameDetails = this.state.gameDetail[0]
-      let screenShots = gameDetails.screenshots.map(screenshot => {
-        return <div key={screenshot.id}>ScreenShot URL: {screenshot.url}</div>
-      })
+      let screenShots
+      if (gameDetails.screenshots) {
+        screenShots = gameDetails.screenshots.map(screenshot => {
+          return <div key={screenshot.id}>ScreenShot URL: {screenshot.url}</div>
+        })
+      } else {
+        screenShots = <div>No Screen Shot</div>
+      }
 
       let platforms = gameDetails.platforms.map(screenShot => {
         return <div key={screenShot.name}>{screenShot.name}</div>
@@ -65,14 +87,34 @@ class GameDetail extends React.Component {
       let genres = gameDetails.genres.map(genre => {
         return <div key={genre.name}>{genre.name}</div>
       })
-
+      console.log("NOW", Date.now())
+      console.log("RELESEDATE", gameDetails.release_dates[0])
       return (
         <div>
           <div
             className={classes.coverImg}
             style={this.gettingCoverStyle()}
           ></div>
-          <div>card</div>
+
+          <div className={classes.headerWrapper}>
+            <div className={classes.gameDetailCard}>
+              <GameDetailCard
+                coverUrl={
+                  this.state.loading
+                    ? "loading"
+                    : this.state.gameDetail[0].cover.url
+                }
+              />
+            </div>
+            <div className={classes.headerTextChunk}>
+              <div className={classes.gameName}>{gameDetails.name}</div>
+              <div className={classes.releaseDate}>
+                {this.getReleaseDateString()}
+                {gameDetails.release_dates[0].human}
+              </div>
+            </div>
+          </div>
+          <div className={classes.bodyWrapper}></div>
           <div>id : {gameDetails.id}</div>
           <div>name : {gameDetails.name}</div>
           <div>cover URL : {gameDetails.cover.url}</div>
@@ -90,15 +132,6 @@ class GameDetail extends React.Component {
     return (
       <Fragment>
         <div>{this.renderDetail()}</div>
-        <div className={classes.gameDetailCard}>
-          <GameDetailCard
-            coverUrl={
-              this.state.loading
-                ? "loading"
-                : this.state.gameDetail[0].cover.url
-            }
-          />
-        </div>
       </Fragment>
     )
   }
