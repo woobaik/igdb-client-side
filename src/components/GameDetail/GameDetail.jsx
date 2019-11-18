@@ -6,6 +6,7 @@ import classes from "./GameDetail.module.css"
 
 import platformIdFinder from "../../script/platformFinder"
 import GameDetailCard from "./GameDetailCard/GameDetailCard"
+import GameDetailBody from "./GameDetailBody/GameDetailBody"
 import Loader from "../UI/Loader"
 class GameDetail extends React.Component {
   state = {
@@ -50,7 +51,9 @@ class GameDetail extends React.Component {
       return ""
     }
 
-    let coverImageStyle = { backgroundImage: `url(${coverImageUrl})` }
+    let coverImageStyle = {
+      backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(${coverImageUrl})`
+    }
 
     return coverImageStyle
   }
@@ -114,15 +117,6 @@ class GameDetail extends React.Component {
               </div>
             </div>
           </div>
-          <div className={classes.bodyWrapper}></div>
-          <div>id : {gameDetails.id}</div>
-          <div>name : {gameDetails.name}</div>
-          <div>cover URL : {gameDetails.cover.url}</div>
-          {screenShots}
-          <div>Summary : {gameDetails.summary}</div>
-          <div>Platform : {platforms}</div>
-          <div>Summary : {gameDetails.summary}</div>
-          <div>Genre : {genres}</div>
         </div>
       )
     }
@@ -140,6 +134,12 @@ class GameDetail extends React.Component {
     return (
       <div className={classes.GameDetail}>
         {this.state.loading ? <Loader /> : this.renderWholeDetailPage()}
+        <div className={classes.gameDetailBody}>
+          <GameDetailBody />
+        </div>
+        <Fragment className={classes.bodyWrapper}>
+          <div></div>
+        </Fragment>
       </div>
     )
   }

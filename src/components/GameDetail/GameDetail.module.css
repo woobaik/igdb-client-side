@@ -6,7 +6,7 @@
 
   background-position: center;
   background-size: cover;
-  opacity: 0.3;
+
   z-index: -2;
 }
 
@@ -15,8 +15,8 @@
 
 .headerWrapper {
   width: 90%;
+  height: 182px;
   margin: 0 auto;
-  height: calc(85vh);
   overflow: auto;
   padding-top: 1rem;
   margin-top: 100px;
@@ -25,6 +25,7 @@
   justify-content: flex-start;
   align-items: flex-start;
   padding-top: 10rem;
+  overflow: visible;
 }
 
 .headerTextChunk {
@@ -41,11 +42,15 @@
 }
 
 .gameName {
-  font-size: 3rem;
+  font-size: 2rem;
+  color: white;
 }
 
 .releaseDate {
-  color: #696969;
+  color: lightgray;
+}
+
+.gameDetailBody {
 }
 
 /* 작을때 */
@@ -79,7 +84,14 @@
   .headerTextChunk {
     align-items: center;
   }
+
+  .gameName {
+    color: black;
+  }
   .releaseDate {
     color: #aaaaaa;
+  }
+
+  .gameDetailBody {
   }
 }

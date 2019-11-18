@@ -1,0 +1,28 @@
+.LandingPage {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.9)),
+    url("../../assets/images/Landing2.jpg");
+  width: 100vw;
+  height: 94vh;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  background-position: center;
+  background-size: cover;
+  justify-content: center;
+}
+
+.landingHeader {
+  font-size: 4rem;
+  margin-bottom: 3rem;
+}
+
+.landingSubHeader {
+  margin: 0 auto;
+  width: 50%;
+  justify-self: flex-start;
+  align-self: flex-start;
+}
+
+.button {
+  
+}

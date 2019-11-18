@@ -1,0 +1,20 @@
+.GameDetailBody {
+  padding: 1rem;
+  width: 50%;
+  font-size: 1.3rem;
+  font-weight: bold;
+  margin-left: 35%;
+}
+
+.bodyDetail {
+  font-size: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  line-height: 2rem;
+}
+
+.summary {
+  padding-top: 3rem;
+  text-align: left;
+}
