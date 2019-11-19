@@ -137,9 +137,8 @@ class GameDetail extends React.Component {
         <div className={classes.gameDetailBody}>
           <GameDetailBody />
         </div>
-        <Fragment className={classes.bodyWrapper}>
-          <div></div>
-        </Fragment>
+
+        <div className={classes.bodyWrapper}></div>
       </div>
     )
   }

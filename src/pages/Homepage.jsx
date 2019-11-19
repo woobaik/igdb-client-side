@@ -4,12 +4,13 @@ import LandingPage from "../components/LandingPage/LandingPage"
 import classes from "./Homepage.module.css"
 const homepage = () => {
   return (
-    <Fragment>
+    <div classNamee={classes.Homepage}>
       <LandingPage />
-      <div className={classes.Homepage}>
+
+      <div className={classes.carousel} id='carousel'>
         <Carousel />
       </div>
-    </Fragment>
+    </div>
   )
 }
 
