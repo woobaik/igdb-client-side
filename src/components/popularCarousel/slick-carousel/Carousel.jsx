@@ -4,6 +4,7 @@ import Slider from "react-slick"
 import "slick-carousel/slick/slick.css"
 import "slick-carousel/slick/slick-theme.css"
 import classes from "./Carousel.module.css"
+import "./Carousel.css"
 import { Link } from "react-router-dom"
 import axios from "axios"
 import { API_KEY } from "../../../.config"
@@ -92,7 +93,7 @@ class SimpleSlider extends Component {
     }
     return (
       <div className={classes.Carousel}>
-        <h2> Popular Games Right Now</h2>
+        <h2 className={classes.carouselHeading}> Popular Games Right Now</h2>
         <div className={classes.transitionPage}>
           {this.state.loading ? (
             <Loader />

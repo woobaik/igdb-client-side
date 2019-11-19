@@ -12,24 +12,22 @@ import {
 const LandingPage = () => {
   return (
     <div className={classes.LandingPage}>
-      <div className={classes.landingHeader}>BAIK's Game Finder</div>
+      <div className={classes.landingHeader}>IGDB CLONE</div>
       <div className={classes.landingSubHeader}>
         A Full Stack Developer Lives in San Francisco
       </div>
 
-      <div className={classes.button}>
-        <Link
-          activeClass='active'
-          className={classes.button}
-          to='carousel'
-          spy={true}
-          smooth={true}
-          duration={700}
-          isDynamic={true}
-        >
-          Let's explore!
-        </Link>
-      </div>
+      <Link
+        activeClass='active'
+        className={classes.button}
+        to='carousel'
+        spy={true}
+        smooth={true}
+        duration={700}
+        isDynamic={true}
+      >
+        <a>LET'S EXPLORE</a>
+      </Link>
     </div>
   )
 }

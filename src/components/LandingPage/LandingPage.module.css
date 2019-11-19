@@ -9,6 +9,7 @@
   background-position: center;
   background-size: cover;
   justify-content: center;
+  align-items: center;
 }
 
 .landingHeader {
@@ -27,4 +28,15 @@
 }
 
 .button {
+  color: white;
+  border: 1px solid white;
+  margin: 2rem;
+  padding: 1rem 1.5rem;
+  transition: all 0.3s ease;
+}
+
+.button:hover {
+  color: black;
+  border: 1px solid white;
+  background-color: white;
 }
