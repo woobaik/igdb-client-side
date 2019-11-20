@@ -21,5 +21,15 @@
 }
 
 .navLogo {
-  font-weight: 500;
+  background-image: url("../../assets/images/logo.png");
+  width: 50px;
+  height: 50px;
+  margin: 10px 0 10px 50px;
+  background-size: cover;
+}
+
+.logo {
+  width: 100%;
+  height: 100%;
+  display: inline-block;
 }

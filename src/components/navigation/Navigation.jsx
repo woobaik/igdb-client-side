@@ -1,12 +1,14 @@
 import React from "react"
 import classes from "./Navigation.module.css"
 import { NavLink } from "react-router-dom"
+
 const navigation = () => {
   return (
     <div className={classes.Navigation}>
-      <NavLink exact to='/' className={(classes.navLogo, classes.navLink)}>
-        JBAIK
-      </NavLink>
+      <div className={classes.navLogo}>
+        <NavLink exact to='/' className={classes.logo}></NavLink>
+      </div>
+
       <div className={classes.navLinks}>
         <NavLink exact to='/platforms/pc' className={classes.navLink}>
           PC
