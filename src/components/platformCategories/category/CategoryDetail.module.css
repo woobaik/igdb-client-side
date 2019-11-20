@@ -1,9 +1,10 @@
 .CategoryDetail {
-  text-align: center;
 }
 
 .gameContainer {
+  width: 80%;
+  margin: 0 auto;
   display: flex;
   flex-wrap: wrap;
-  justify-content: flex-end;
+  justify-content: center;
 }

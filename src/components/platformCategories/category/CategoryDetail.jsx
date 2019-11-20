@@ -67,7 +67,7 @@ class categoryDetail extends Component {
         data:
           // fields *; where game.platforms = 48 & date < 1538129354; sort date desc;
 
-          `fields category,date,game, game.name, game.popularity, game.slug, 
+          `fields category,date,game, game.name, game.popularity, game.slug, game.genres
                 game.screenshots, game.cover.url ,platform, game.slug; 
           where game.platforms = ${platformId} & region = 2 
                 & date < ${todayMili} & game.popularity > 5; 
@@ -101,11 +101,8 @@ class categoryDetail extends Component {
     return (
       <div className={classes.CategoryDetail}>
         <div>CATEGORY DETAIL</div>
-        <FloatingButton />
         <div>NAME : {this.props.match.params.platform}</div>
-        <div className={classes.gameContainer}>
-          {this.state.loading ? <Loader /> : this.gameContainer()}
-        </div>
+        <div className={classes.gameContainer}>{this.gameContainer()}</div>
       </div>
     )
   }

@@ -1,5 +1,5 @@
 import React from "react"
-import classes from "./GamePreview.module.css"
+import classes from "./GamePreview.module.scss"
 import { withRouter } from "react-router"
 
 const gamePreview = ({ name, cover, match, history, slug }) => {
@@ -19,8 +19,13 @@ const gamePreview = ({ name, cover, match, history, slug }) => {
       <div
         className={classes.gameImage}
         style={{ backgroundImage: `url(${coverImg})` }}
-      ></div>
-      <div className={classes.gameDetail}>{name}</div>
+      >
+        <div className={classes.gameDetail}>
+          <div className={classes.gameTitle}>{name}</div>
+          <div className={classes.releaseDate}>RELEASE DATE</div>
+          <div className={classes.more}> CLICK TO SEE MORE</div>
+        </div>
+      </div>
     </div>
   )
 }
