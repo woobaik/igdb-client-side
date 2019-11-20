@@ -14,6 +14,7 @@ class NavWrapper extends Component {
   }
 
   render() {
+    console.log("hi", this.props)
     return (
       <div className={classes.NavWrapper}>
         <div className={classes.navTitleWrapper}>

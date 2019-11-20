@@ -37,9 +37,9 @@ class Navigation extends Component {
     ]
   }
 
-  renderWrapper() {
-    this.state.groups.map(group => {
-      return <NavWrapper title={group.title} lists />
+  renderWrapper = () => {
+    return this.state.groups.map(({ title, lists }) => {
+      return <NavWrapper title={title} lists={lists} />
     })
   }
 
@@ -50,8 +50,8 @@ class Navigation extends Component {
           <NavLink exact to='/' className={classes.logo}></NavLink>
         </div>
 
-        <NavWrapper />
-        <div className={classes.navLinks}>
+        {this.renderWrapper()}
+        {/* <div className={classes.navLinks}>
           <NavLink exact to='/platforms/pc' className={classes.navLink}>
             PC
           </NavLink>
@@ -68,7 +68,7 @@ class Navigation extends Component {
           <NavLink exact to='/platforms/nintendo' className={classes.navLink}>
             NINTENDO
           </NavLink>
-        </div>
+        </div> */}
       </div>
     )
   }
