@@ -6,7 +6,7 @@ import {
 } from "react-floating-button-menu"
 import MdAdd from "@material-ui/icons/Add"
 import MdClose from "@material-ui/icons/Clear"
-import MdFavorite from "@material-ui/icons/Favorite"
+
 import PersonIcon from "@material-ui/icons/Person"
 import LinkedInIcon from "@material-ui/icons/LinkedIn"
 import GitHubIcon from "@material-ui/icons/GitHub"
@@ -27,16 +27,16 @@ class FloatingButton extends Component {
           isOpen={this.state.isOpen}
         >
           <MainButton
-            iconResting={<MdAdd style={{ fontSize: 20 }} nativeColor='white' />}
+            iconResting={<MdAdd style={{ fontSize: 20 }} nativecolor='white' />}
             iconActive={
-              <MdClose style={{ fontSize: 20 }} nativeColor='white' />
+              <MdClose style={{ fontSize: 20 }} nativecolor='white' />
             }
             backgroundColor='black'
             onClick={() => this.setState({ isOpen: !this.state.isOpen })}
             size={56}
           />
           <ChildButton
-            icon={<PersonIcon style={{ fontSize: 20 }} nativeColor='white' />}
+            icon={<PersonIcon style={{ fontSize: 20 }} nativecolor='white' />}
             backgroundColor='white'
             size={40}
             onClick={() =>
@@ -45,7 +45,7 @@ class FloatingButton extends Component {
           />
 
           <ChildButton
-            icon={<LinkedInIcon style={{ fontSize: 20 }} nativeColor='white' />}
+            icon={<LinkedInIcon style={{ fontSize: 20 }} nativecolor='white' />}
             backgroundColor='white'
             size={40}
             onClick={() =>
@@ -53,7 +53,7 @@ class FloatingButton extends Component {
             }
           />
           <ChildButton
-            icon={<GitHubIcon style={{ fontSize: 20 }} nativeColor='white' />}
+            icon={<GitHubIcon style={{ fontSize: 20 }} nativecolor='white' />}
             backgroundColor='white'
             size={40}
             onClick={() =>

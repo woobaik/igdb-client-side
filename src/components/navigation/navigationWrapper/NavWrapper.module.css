@@ -1,0 +1,17 @@
+.NavWrapper {
+  color: white;
+}
+
+.NavWrapper:hover {
+  cursor: pointer;
+}
+.navTitleWrapper {
+}
+.navTitle {
+}
+.navListsWrapper {
+}
+.navListWrapperUl {
+}
+.navList {
+}

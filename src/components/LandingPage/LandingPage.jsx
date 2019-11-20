@@ -1,8 +1,7 @@
 import React from "react"
 import classes from "./LandingPage.module.css"
-import { Link, animateScroll as scroll } from "react-scroll"
+import { Link } from "react-scroll"
 
-import FloatingButton from "../UI/floatingButton/floatingButton"
 import AnimatedText from "./animatedText/AnimatedText"
 const LandingPage = () => {
   return (

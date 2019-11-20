@@ -6,10 +6,10 @@ import comingSoon from "../../../assets/images/comingSoon.jpg"
 import platformFinder from "../../../script/platformFinder"
 
 import GamePreview from "../../GamePreview/GamePreview"
-import Loader from "../../UI/Loader"
+// import Loader from "../../UI/Loader"
 
 import classes from "./CategoryDetail.module.css"
-import FloatingButton from "../../UI/floatingButton/floatingButton"
+// import FloatingButton from "../../UI/floatingButton/floatingButton"
 
 class categoryDetail extends Component {
   state = {

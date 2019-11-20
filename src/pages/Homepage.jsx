@@ -1,4 +1,4 @@
-import React, { Fragment } from "react"
+import React from "react"
 import Carousel from "../components/popularCarousel/slick-carousel/Carousel"
 import LandingPage from "../components/LandingPage/LandingPage"
 import FloatingButton from "../components/UI/floatingButton/floatingButton"
