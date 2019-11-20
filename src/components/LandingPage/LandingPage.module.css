@@ -1,26 +1,25 @@
 .LandingPage {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.9)),
+  background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.4)),
     url("../../assets/images/Landing2.jpg");
   width: 100vw;
   height: 94vh;
   color: white;
   display: flex;
   flex-direction: column;
-  background-position: center;
+  background-position: top;
   background-size: cover;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
 }
 
 .landingHeader {
-  font-size: 5rem;
-  margin-bottom: 3rem;
+  font-size: 4rem;
+  margin: 7rem 0 0 0;
   letter-spacing: 0.1rem;
 }
 
 .landingSubHeader {
-  margin: 0 auto;
-  width: 50%;
+  width: 100%;
   justify-self: flex-start;
   align-self: flex-start;
   letter-spacing: 2px;
@@ -30,13 +29,14 @@
 .button {
   color: white;
   border: 1px solid white;
-  margin: 2rem;
+  margin-top: 2rem;
   padding: 1rem 1.5rem;
   transition: all 0.3s ease;
 }
 
 .button:hover {
   color: black;
+  cursor: pointer;
   border: 1px solid white;
   background-color: white;
 }

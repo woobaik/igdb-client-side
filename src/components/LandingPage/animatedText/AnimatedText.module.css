@@ -1,0 +1,15 @@
+.AnimatedText {
+  font-size: 1rem;
+  position: relative;
+}
+
+.text {
+  margin: 4px;
+  color: #fff;
+}
+
+@media (max-width: 500px) {
+  .AnimatedText {
+    font-size: 0.6rem;
+  }
+}

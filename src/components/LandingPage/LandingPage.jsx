@@ -1,20 +1,15 @@
 import React from "react"
 import classes from "./LandingPage.module.css"
-import {
-  Link,
-  Element,
-  Events,
-  animateScroll as scroll,
-  scrollSpy,
-  scroller
-} from "react-scroll"
+import { Link, animateScroll as scroll } from "react-scroll"
 
+import FloatingButton from "../UI/floatingButton/floatingButton"
+import AnimatedText from "./animatedText/AnimatedText"
 const LandingPage = () => {
   return (
     <div className={classes.LandingPage}>
       <div className={classes.landingHeader}>IGDB CLONE</div>
       <div className={classes.landingSubHeader}>
-        A Full Stack Developer Lives in San Francisco
+        <AnimatedText />
       </div>
 
       <Link
@@ -26,7 +21,7 @@ const LandingPage = () => {
         duration={700}
         isDynamic={true}
       >
-        <a>LET'S EXPLORE</a>
+        <span>LET'S EXPLORE</span>
       </Link>
     </div>
   )

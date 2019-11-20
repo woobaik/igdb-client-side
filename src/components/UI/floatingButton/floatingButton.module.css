@@ -1,0 +1,16 @@
+.Floating li,
+.Floating a {
+  background: linear-gradient(
+    45deg,
+    rgb(254, 107, 139) 30%,
+    rgb(255, 142, 83) 90%
+  );
+}
+
+.Floating a:hover {
+  background: linear-gradient(
+    45deg,
+    rgb(255, 142, 83) 30%,
+    rgb(254, 107, 139) 90%
+  );
+}

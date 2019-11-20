@@ -8,3 +8,9 @@
   text-align: center;
   margin: 0 auto;
 }
+
+.floatingBtn {
+  position: fixed;
+  bottom: 50px;
+  right: 50px;
+}

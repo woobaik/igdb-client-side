@@ -9,6 +9,7 @@ import GamePreview from "../../GamePreview/GamePreview"
 import Loader from "../../UI/Loader"
 
 import classes from "./CategoryDetail.module.css"
+import FloatingButton from "../../UI/floatingButton/floatingButton"
 
 class categoryDetail extends Component {
   state = {
@@ -100,6 +101,7 @@ class categoryDetail extends Component {
     return (
       <div className={classes.CategoryDetail}>
         <div>CATEGORY DETAIL</div>
+        <FloatingButton />
         <div>NAME : {this.props.match.params.platform}</div>
         <div className={classes.gameContainer}>
           {this.state.loading ? <Loader /> : this.gameContainer()}
