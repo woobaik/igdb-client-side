@@ -2,6 +2,7 @@ import React, { Component } from "react"
 import classes from "./NavWrapper.module.css"
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore"
 import ExpandLessIcon from "@material-ui/icons/ExpandLess"
+import { Link } from "react-router-dom"
 
 class NavWrapper extends Component {
   state = {
@@ -13,8 +14,19 @@ class NavWrapper extends Component {
     this.setState({ isOpen: !this.state.isOpen })
   }
 
+  renderLists = () => {
+    return this.props.lists.map(list => {
+      return (
+        <div key={list.name} className={classes.navList}>
+          <Link to={"/"} key={list.name}>
+            {list.name}
+          </Link>
+        </div>
+      )
+    })
+  }
+
   render() {
-    console.log("hi", this.props)
     return (
       <div className={classes.NavWrapper}>
         <div className={classes.navTitleWrapper}>
@@ -22,20 +34,15 @@ class NavWrapper extends Component {
             className={classes.navTitle}
             onClick={() => this.handleWrapperClick()}
           >
-            WRPPER TITLE{" "}
-            {this.state.isOpen ? <ExpandMoreIcon /> : <ExpandLessIcon />}
+            <div>{this.props.title}</div>
+            <div className={classes.fontIcon}>
+              {!this.state.isOpen ? <ExpandMoreIcon /> : <ExpandLessIcon />}
+            </div>
           </div>
         </div>
 
         {this.state.isOpen ? (
-          <div className={classes.navListsWrapper}>
-            <ul className={classes.navListWrapperUl}>
-              <li className={classes.navList}>ITEM 1</li>
-              <li className={classes.navList}>ITEM 2</li>
-              <li className={classes.navList}>ITEM 3</li>
-              <li className={classes.navList}>ITEM 4</li>
-            </ul>
-          </div>
+          <div className={classes.navListsWrapper}>{this.renderLists()}</div>
         ) : (
           ""
         )}

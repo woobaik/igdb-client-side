@@ -20,7 +20,7 @@ const LandingPage = () => {
         duration={700}
         isDynamic={true}
       >
-        <span>LET'S EXPLORE</span>
+        <span>LET'S EXPLORE </span>
       </Link>
     </div>
   )

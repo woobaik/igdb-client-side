@@ -10,28 +10,28 @@ class Navigation extends Component {
       {
         title: "UPCOMING GAMES",
         lists: [
-          { name: "PC", icon: "icon" },
-          { name: "PS4", icon: "icon" },
-          { name: "Xbox", icon: "icon" },
-          { name: "NINTENDO", icon: "icon" }
+          { name: "PC", icon: "MdComputer" },
+          { name: "PS4", icon: "FaPlayStation" },
+          { name: "Xbox", icon: "FaXbox" },
+          { name: "NINTENDO", icon: "FaNintendoSwitch" }
         ]
       },
       {
         title: "RECENTLY RELEASED",
         lists: [
-          { name: "PC", icon: "icon" },
-          { name: "PS4", icon: "icon" },
-          { name: "Xbox", icon: "icon" },
-          { name: "NINTENDO", icon: "icon" }
+          { name: "PC", icon: "MdComputer" },
+          { name: "PS4", icon: "FaPlayStation" },
+          { name: "Xbox", icon: "FaXbox" },
+          { name: "NINTENDO", icon: "FaNintendoSwitch" }
         ]
       },
       {
         title: "ABOUT ME",
         lists: [
-          { name: "Github" },
-          { name: "LinkedIn" },
-          { name: "WEBSITE" },
-          { name: "RESUME" }
+          { name: "Github", icon: "FaGithub" },
+          { name: "LinkedIn", icon: "FaLinkedin" },
+          { name: "WEBSITE", icon: "" },
+          { name: "RESUME", icon: "MdPictureAsPdf" }
         ]
       }
     ]
@@ -39,7 +39,7 @@ class Navigation extends Component {
 
   renderWrapper = () => {
     return this.state.groups.map(({ title, lists }) => {
-      return <NavWrapper title={title} lists={lists} />
+      return <NavWrapper title={title} lists={lists} key={title} />
     })
   }
 
@@ -53,9 +53,9 @@ class Navigation extends Component {
         {this.renderWrapper()}
         {/* <div className={classes.navLinks}>
           <NavLink exact to='/platforms/pc' className={classes.navLink}>
-            PC
-          </NavLink>
-          <NavLink
+  FaPlayStation  C
+          FaPlayStation/NavLink>
+          <FaXbox
             exact
             to='/platforms/playstation4'
             className={classes.navLink}
