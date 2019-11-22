@@ -39,9 +39,7 @@ class FloatingButton extends Component {
             icon={<PersonIcon style={{ fontSize: 20 }} nativecolor='white' />}
             backgroundColor='white'
             size={40}
-            onClick={() =>
-              window.open("https://www.github.com/woobaik", "_blank")
-            }
+            onClick={() => window.open("https://www.jbaik.com", "_blank")}
           />
 
           <ChildButton

@@ -11,7 +11,7 @@ class Navigation extends Component {
         title: "UPCOMING GAMES",
         lists: [
           { name: "PC", icon: "MdComputer" },
-          { name: "PS4", icon: "FaPlayStation" },
+          { name: "PS4", icon: "FaPlaystation" },
           { name: "Xbox", icon: "FaXbox" },
           { name: "NINTENDO", icon: "FaNintendoSwitch" }
         ]
@@ -20,7 +20,7 @@ class Navigation extends Component {
         title: "RECENTLY RELEASED",
         lists: [
           { name: "PC", icon: "MdComputer" },
-          { name: "PS4", icon: "FaPlayStation" },
+          { name: "PS4", icon: "FaPlaystation" },
           { name: "Xbox", icon: "FaXbox" },
           { name: "NINTENDO", icon: "FaNintendoSwitch" }
         ]
@@ -30,7 +30,7 @@ class Navigation extends Component {
         lists: [
           { name: "Github", icon: "FaGithub" },
           { name: "LinkedIn", icon: "FaLinkedin" },
-          { name: "WEBSITE", icon: "" },
+          { name: "WEBSITE", icon: "MdPictureAsPdf" },
           { name: "RESUME", icon: "MdPictureAsPdf" }
         ]
       }
@@ -46,11 +46,14 @@ class Navigation extends Component {
   render() {
     return (
       <div className={classes.Navigation}>
-        <div className={classes.navLogo}>
-          <NavLink exact to='/' className={classes.logo}></NavLink>
+        <div className={classes.logoContainer}>
+          <div className={classes.navLogo}>
+            <NavLink exact to='/' className={classes.logo}></NavLink>
+          </div>
         </div>
 
-        {this.renderWrapper()}
+        <div className={classes.navMenu}>{this.renderWrapper()}</div>
+
         {/* <div className={classes.navLinks}>
           <NavLink exact to='/platforms/pc' className={classes.navLink}>
   FaPlayStation  C

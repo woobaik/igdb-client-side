@@ -10,7 +10,6 @@ const homepage = () => {
 
       <div className={classes.carousel} id='carousel'>
         <Carousel />
-        <Carousel />
       </div>
       <div className={classes.floatingBtn}>
         <FloatingButton />
