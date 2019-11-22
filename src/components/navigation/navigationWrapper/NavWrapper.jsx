@@ -1,4 +1,6 @@
 import React, { Component } from "react"
+import onClickOutside from "react-onclickoutside"
+
 import classes from "./NavWrapper.module.css"
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore"
 import ExpandLessIcon from "@material-ui/icons/ExpandLess"
@@ -14,7 +16,7 @@ import {
 
 class NavWrapper extends Component {
   state = {
-    isOpen: true
+    isOpen: false
   }
 
   components = {
@@ -32,6 +34,9 @@ class NavWrapper extends Component {
     this.setState({ isOpen: !this.state.isOpen })
   }
 
+  handleClickOutside = evt => {
+    this.setState({ isOpen: false })
+  }
   renderLists = () => {
     return this.props.lists.map(list => {
       const IconComponent = this.components[list.icon]
@@ -72,4 +77,4 @@ class NavWrapper extends Component {
   }
 }
 
-export default NavWrapper
+export default onClickOutside(NavWrapper)
