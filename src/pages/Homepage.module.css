@@ -1,6 +1,6 @@
 .Homepage {
   background-color: #0f0f10;
-  height: 250vh;
+  height: 295vh;
 }
 
 .carousel {
@@ -13,4 +13,40 @@
   position: fixed;
   bottom: 50px;
   right: 50px;
+}
+
+.button {
+  display: inline-block;
+  color: white;
+  border: 1px solid white;
+  margin-top: 4rem;
+  padding: 1rem 1.5rem;
+  transition: all 0.3s ease;
+}
+
+.button:hover {
+  color: black;
+  cursor: pointer;
+  border: 1px solid white;
+  background-color: white;
+}
+
+.youtubeContainer {
+  width: 80%;
+  height: 60vh;
+  text-align: center;
+  margin: 5rem auto 0 auto;
+  padding-top: 3rem;
+}
+
+.youtubeHeading {
+  display: flex;
+  color: #9254fc;
+  margin-bottom: 3rem;
+}
+
+.youtubeBody {
+  padding-top: 3rem;
+  display: flex;
+  justify-content: center;
 }

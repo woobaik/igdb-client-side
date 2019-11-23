@@ -1,9 +1,10 @@
 .Carousel {
   box-sizing: border-box;
+  padding-top: 100px;
 }
 
 .cover {
-  height: 40vh;
+  height: 50vh;
   width: 400px;
   text-decoration: none;
   color: black;

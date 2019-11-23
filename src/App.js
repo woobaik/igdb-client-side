@@ -6,6 +6,7 @@ import PlatformCategory from "./components/platformCategories/PlatformCategories
 import Navigation from "./components/navigation/Navigation"
 import CategoryDetail from "./components/platformCategories/category/CategoryDetail"
 import GameDetail from "./components/GameDetail/GameDetail"
+import Footer from "./components/Footer/Footer"
 import "./App.css"
 
 function App() {
@@ -25,6 +26,7 @@ function App() {
           <Route exact path='/platforms' component={PlatformCategory} />>
           <Route exact path='/' component={HomePage} />>
         </Switch>
+        <Footer />
       </div>
     </Router>
   )
