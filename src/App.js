@@ -26,8 +26,8 @@ function App() {
           <Route exact path='/platforms' component={PlatformCategory} />>
           <Route exact path='/' component={HomePage} />>
         </Switch>
-        <Footer />
       </div>
+      <Footer />
     </Router>
   )
 }

@@ -5,6 +5,7 @@ import skills from "../../chipSet"
 import Chip from "@material-ui/core/Chip"
 
 import { MdCopyright } from "react-icons/md"
+
 const footer = () => {
   const chipIterator = skills.map(chip => {
     return (
