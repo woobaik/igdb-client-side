@@ -24,25 +24,37 @@
 
 .card {
   flex: 0 1 30%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   background-color: white;
   margin-bottom: 3rem;
   border-radius: 5px;
 }
 .cardTitle {
-  font-size: 2rem;
-  padding-top: 1rem;
+  font-size: 1.5rem;
+  padding: 1rem 0;
   color: #808080;
+}
+
+.cardChips {
+  display: flex;
+
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
 }
 
 .cardBody {
   color: darkgray;
   padding-top: 10vh;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
 }
 
 .skills {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
 }
 
 .copyright {
@@ -52,4 +64,15 @@
   align-items: center;
   letter-spacing: 3px;
   font-size: 0.8rem;
+}
+
+.link {
+  cursor: pointer;
+  margin: 0.1rem;
+  transition: all 0.5s ease;
+}
+
+.link:hover {
+  color: rgb(108, 65, 160);
+  font-size: 1.1rem;
 }

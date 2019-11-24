@@ -34,6 +34,7 @@ const homepage = () => {
       >
         <span>Check Random YouTube Video! </span>
       </Link>
+
       <div className={classes.youtubeContainer} id='youtube'>
         <h2 className={classes.youtubeHeading}>RECOMMENDED RANDOM VIDEO</h2>
         <div className={classes.youtubeBody}>

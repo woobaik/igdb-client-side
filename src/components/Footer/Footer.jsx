@@ -10,6 +10,7 @@ const footer = () => {
   const chipIterator = skills.map(chip => {
     return (
       <Chip
+        key={chip.name}
         style={{
           backgroundColor: chip.color,
           color: "white",
@@ -42,10 +43,25 @@ const footer = () => {
         </div>
         <div className={[classes.card, classes.skills].join(" ")}>
           <div className={classes.cardTitle}>TECH STACK</div>
-          <div className={classes.chips}>{chipIterator}</div>
+          <div className={classes.cardChips}>{chipIterator}</div>
         </div>
         <div className={classes.card}>
           <div className={classes.cardTitle}>RELATED LINKS</div>
+          <div className={classes.cardBody}>
+            <div className={classes.link}>LinkedIn</div>
+            <div className={classes.link}>GitHub</div>
+            <div
+              className={classes.link}
+              onClick={() =>
+                window.open(
+                  require("../../assets/pdf/Joungwoo Baik-Resume.pdf"),
+                  "_none"
+                )
+              }
+            >
+              Resume
+            </div>
+          </div>
         </div>
       </div>
       <div className={classes.copyright}>
