@@ -50,7 +50,7 @@ class categoryDetail extends Component {
 
         `fields category, game.name, game.popularity, game.slug, 
                 game.screenshots, game.cover.url, game.platforms; 
-          where date ${condition.operator} ${todayLimit} & game.platforms = ${platformId} & game.cover != null & game.popularity != null; sort date ${condition.order}; limit 20;
+          where game.platforms = ${platformId} & date ${condition.operator} ${todayLimit} & game.cover != null; sort date ${condition.order}; limit 20;
 
           `
     })
@@ -86,7 +86,7 @@ class categoryDetail extends Component {
 
           `fields category, game.name, game.popularity, game.slug, 
                 game.screenshots, game.cover.url, game.platforms; 
-          where date ${condition.operator} ${todayLimit} & game.platforms = ${platformId} & game.cover != null & game.screenshots != null; sort date ${condition.order}; limit 20;
+          where game.platforms = ${platformId} & date ${condition.operator} ${todayLimit} & game.cover != null; sort date ${condition.order}; limit 20;
           
           `
       })
@@ -100,15 +100,15 @@ class categoryDetail extends Component {
   }
 
   gameContainer = () => {
-    return this.state.games.map(({ game }) => {
-      let coverUrl = game ? game.cover.url : comingSoon
+    return this.state.games.map(game => {
+      let coverUrl = game.game ? game.game.cover.url : comingSoon
       return (
         <GamePreview
-          popularity={game.popularity}
-          key={game.slug}
-          name={game.name}
+          popularity={game.game.popularity}
+          key={game.id}
+          name={game.game.name}
           cover={coverUrl}
-          slug={game.slug}
+          slug={game.game.slug}
         ></GamePreview>
       )
     })

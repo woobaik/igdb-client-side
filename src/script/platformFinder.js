@@ -10,7 +10,7 @@ const platformIdFinder = platform => {
       return "130"
 
     case "xbox":
-      return "12"
+      return "49"
 
     case "etc":
       break
