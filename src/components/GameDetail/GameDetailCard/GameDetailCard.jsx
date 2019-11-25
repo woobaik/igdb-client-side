@@ -1,8 +1,11 @@
-import React from "react"
+import React, { useEffect } from "react"
 import classes from "./GameDeatilCard.module.css"
-const gameDetailCard = props => {
+const GameDetailCard = props => {
   let imageStyle = `https:${props.coverUrl}`.replace("t_thumb", "t_cover_big")
 
+  useEffect(() => {
+    window.scroll(0, 0)
+  })
   return (
     <div className={classes.gameDetailCard}>
       <div
@@ -13,4 +16,4 @@ const gameDetailCard = props => {
   )
 }
 
-export default gameDetailCard
+export default GameDetailCard

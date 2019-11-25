@@ -30,6 +30,8 @@ class categoryDetail extends Component {
   }
 
   componentDidMount() {
+    window.scrollTo(0, 0)
+
     let platform = this.props.match.params.platform
     let platformId = platformFinder(platform)
     let todayUni = new Date().getTime().toString()
@@ -62,7 +64,7 @@ class categoryDetail extends Component {
   }
 
   componentDidUpdate(prevProps, prevState, snapShot) {
-    console.log("params", this.props.match)
+    window.scrollTo(0, 0)
 
     if (this.props.match !== prevProps.match) {
       let platform = this.props.match.params.platform
@@ -71,7 +73,7 @@ class categoryDetail extends Component {
       let todayLimit = todayUni.slice(0, 10)
       let condition = this.comingOrRecent()
 
-      this.setState({ categoryName: platform.toUpperCase(), loading: true })
+      this.setState({ categoryName: platform.toUpperCase(), loading: false })
 
       axios({
         url: "/release_dates",
@@ -113,11 +115,23 @@ class categoryDetail extends Component {
     })
   }
 
+  titleName = () => {
+    console.log("this!!", this.props.match.path.indexOf("upcoming"))
+    if (this.props.match.path.indexOf("recent") == 1) {
+      return "RECENTLY ADDED GAME"
+    } else if (this.props.match.path.indexOf("upcoming") === 1) {
+      return "UPCOMING GAME"
+    }
+  }
+
   render() {
     return (
       <div className={classes.CategoryDetail}>
-        <div>CATEGORY DETAIL</div>
-        <div>NAME : {this.props.match.params.platform}</div>
+        <div className={classes.categoryDetailTitle}>
+          {this.titleName()} FOR{" "}
+          {this.props.match.params.platform.toUpperCase()}
+        </div>
+
         <div className={classes.gameContainer}>{this.gameContainer()}</div>
       </div>
     )

@@ -23,13 +23,16 @@ class AwesomeComponent extends React.Component {
           this.props.loading ? classes.visible : ""
         } `}
       >
-        <PacmanLoader
-          css={override}
-          sizeUnit={"px"}
-          size={100}
-          color={"#F9A602"}
-          loading={this.props.loading}
-        />
+        <div>
+          <PacmanLoader
+            css={override}
+            sizeUnit={"px"}
+            size={50}
+            color={"#fff"}
+            loading={this.props.loading}
+          />
+        </div>
+        <div className={classes.loading}>Loading! :)</div>
       </div>
     )
   }
