@@ -30,7 +30,6 @@ class NavWrapper extends Component {
   }
 
   handleWrapperClick = () => {
-    console.log("clicked")
     this.setState({ isOpen: !this.state.isOpen })
   }
 
@@ -38,11 +37,12 @@ class NavWrapper extends Component {
     this.setState({ isOpen: false })
   }
   renderLists = () => {
+    console.log(this.props)
     return this.props.lists.map(list => {
       const IconComponent = this.components[list.icon]
       return (
         <div key={list.name} className={classes.navList}>
-          <Link to={"/"} key={list.name}>
+          <Link to={list.url} key={list.name}>
             <div className={classes.icon}>
               {list.name} {IconComponent}
             </div>

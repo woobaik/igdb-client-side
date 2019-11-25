@@ -18,11 +18,24 @@ class categoryDetail extends Component {
     loading: true
   }
 
+  comingOrRecent = () => {
+    if (this.props.match.path.indexOf("upcoming") === 1) {
+      const category = { operator: ">", order: "asc" }
+      return category
+    } else if (this.props.match.path.indexOf("recent") === 1) {
+      const category = { operator: "<", order: "desc" }
+      return category
+    } else {
+      return false
+    }
+  }
+
   componentDidMount() {
     let platform = this.props.match.params.platform
     let platformId = platformFinder(platform)
-    let todayMili = new Date().getTime()
-
+    let todayUni = new Date().getTime().toString()
+    let todayLimit = todayUni.slice(0, 10)
+    let condition = this.comingOrRecent()
     this.setState({ categoryName: platform.toUpperCase() })
 
     axios({
@@ -35,11 +48,11 @@ class categoryDetail extends Component {
       data:
         // fields *; where game.platforms = 48 & date < 1538129354; sort date desc;
 
-        `fields category,date,game, game.name, game.popularity, game.slug, 
-                game.screenshots, game.cover.url ,platform, game.slug; 
-          where game.platforms = ${platformId} & region = 2 
-                & date < ${todayMili} & game.popularity > 5; 
-          sort date desc; limit 20;`
+        `fields category, game.name, game.popularity, game.slug, 
+                game.screenshots, game.cover.url, game.platforms; 
+          where date ${condition.operator} ${todayLimit} & game.platforms = ${platformId} & game.cover != null & game.popularity != null; sort date ${condition.order}; limit 20;
+
+          `
     })
       .then(response => {
         this.setState({ games: response.data, loading: false })
@@ -50,10 +63,14 @@ class categoryDetail extends Component {
   }
 
   componentDidUpdate(prevProps, prevState, snapShot) {
-    if (this.props.match.params.platform !== prevProps.match.params.platform) {
+    console.log("params", this.props.match)
+
+    if (this.props.match !== prevProps.match) {
       let platform = this.props.match.params.platform
       let platformId = platformFinder(platform)
-      let todayMili = new Date().getTime()
+      let todayUni = new Date().getTime().toString()
+      let todayLimit = todayUni.slice(0, 10)
+      let condition = this.comingOrRecent()
 
       this.setState({ categoryName: platform.toUpperCase(), loading: true })
 
@@ -67,11 +84,11 @@ class categoryDetail extends Component {
         data:
           // fields *; where game.platforms = 48 & date < 1538129354; sort date desc;
 
-          `fields category,date,game, game.name, game.popularity, game.slug, game.genres
-                game.screenshots, game.cover.url ,platform, game.slug; 
-          where game.platforms = ${platformId} & region = 2 
-                & date < ${todayMili} & game.popularity > 5; 
-          sort date desc; limit 20;`
+          `fields category, game.name, game.popularity, game.slug, 
+                game.screenshots, game.cover.url, game.platforms; 
+          where date ${condition.operator} ${todayLimit} & game.platforms = ${platformId} & game.cover != null & game.screenshots != null; sort date ${condition.order}; limit 20;
+          
+          `
       })
         .then(response => {
           this.setState({ games: response.data, loading: false })
@@ -84,12 +101,11 @@ class categoryDetail extends Component {
 
   gameContainer = () => {
     return this.state.games.map(({ game }) => {
-      let coverUrl = game.cover ? game.cover.url : comingSoon
-
+      let coverUrl = game ? game.cover.url : comingSoon
       return (
         <GamePreview
           popularity={game.popularity}
-          key={game.id}
+          key={game.slug}
           name={game.name}
           cover={coverUrl}
           slug={game.slug}
@@ -97,6 +113,7 @@ class categoryDetail extends Component {
       )
     })
   }
+
   render() {
     return (
       <div className={classes.CategoryDetail}>

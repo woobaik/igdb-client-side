@@ -15,13 +15,13 @@ function App() {
       <div className='App'>
         <Navigation />
         <Switch>
-          <Route exact path='/platforms/:platform' component={CategoryDetail} />
-          >
           <Route
             exact
-            path='/platforms/:platform/:gameTitle'
-            component={GameDetail}
+            path='/upcoming-games/:platform'
+            component={CategoryDetail}
           />
+          >
+          <Route exact path='/recent/:platform' component={CategoryDetail} />>
           <Route exact path='/games/:gameTitle' component={GameDetail}></Route>
           <Route exact path='/platforms' component={PlatformCategory} />>
           <Route exact path='/' component={HomePage} />>

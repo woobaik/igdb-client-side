@@ -48,7 +48,8 @@ class GameDetail extends React.Component {
           "t_screenshot_big"
         )
     } else {
-      return ""
+      coverImageUrl =
+        "https://images.unsplash.com/photo-1496989981497-27d69cdad83e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=844&q=80"
     }
 
     let coverImageStyle = {
@@ -90,8 +91,7 @@ class GameDetail extends React.Component {
       let genres = gameDetails.genres.map(genre => {
         return <div key={genre.name}>{genre.name}</div>
       })
-      console.log("NOW", Date.now())
-      console.log("RELESEDATE", gameDetails.release_dates[0])
+
       return (
         <div>
           <div
@@ -131,6 +131,7 @@ class GameDetail extends React.Component {
   }
 
   render() {
+    console.log(this.state.gameDetail)
     return (
       <div className={classes.GameDetail}>
         {this.state.loading ? <Loader /> : this.renderWholeDetailPage()}

@@ -49,6 +49,7 @@ class SimpleSlider extends Component {
           to={`/games/${game.slug}`}
         >
           <div className={classes.coverImg} style={imgstyle}></div>
+
           <div className={classes.coverTitle}>{game.name}</div>
           <div className={classes.coverGenre}>{game.genres[0].name}</div>
         </Link>

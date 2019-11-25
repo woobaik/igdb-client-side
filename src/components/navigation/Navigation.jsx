@@ -10,19 +10,31 @@ class Navigation extends Component {
       {
         title: "UPCOMING GAMES",
         lists: [
-          { name: "PC", icon: "MdComputer" },
-          { name: "PS4", icon: "FaPlaystation" },
-          { name: "Xbox", icon: "FaXbox" },
-          { name: "NINTENDO", icon: "FaNintendoSwitch" }
+          { name: "PC", icon: "MdComputer", url: "/upcoming-games/pc" },
+          {
+            name: "PS4",
+            icon: "FaPlaystation",
+            url: "/upcoming-games/playstation4"
+          },
+          { name: "Xbox", icon: "FaXbox", url: "/upcoming-games/xbox" },
+          {
+            name: "NINTENDO",
+            icon: "FaNintendoSwitch",
+            url: "/upcoming-games/nintendo"
+          }
         ]
       },
       {
         title: "RECENTLY RELEASED",
         lists: [
-          { name: "PC", icon: "MdComputer" },
-          { name: "PS4", icon: "FaPlaystation" },
-          { name: "Xbox", icon: "FaXbox" },
-          { name: "NINTENDO", icon: "FaNintendoSwitch" }
+          { name: "PC", icon: "MdComputer", url: "/recent/pc" },
+          { name: "PS4", icon: "FaPlaystation", url: "/recent/playstation4" },
+          { name: "Xbox", icon: "FaXbox", url: "/recent/xbox" },
+          {
+            name: "NINTENDO",
+            icon: "FaNintendoSwitch",
+            url: "/recent/nintendo"
+          }
         ]
       },
       {
