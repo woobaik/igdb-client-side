@@ -48,8 +48,28 @@ const footer = () => {
         <div className={classes.card}>
           <div className={classes.cardTitle}>RELATED LINKS</div>
           <div className={classes.cardBody}>
-            <div className={classes.link}>LinkedIn</div>
-            <div className={classes.link}>GitHub</div>
+            <div
+              className={classes.link}
+              onClick={() =>
+                window.open("https://www.linkedin.com/in/baik/", "_blank")
+              }
+            >
+              LinkedIn
+            </div>
+            <div
+              className={classes.link}
+              onClick={() =>
+                window.open("https://www.github.com/woobaik", "_blank")
+              }
+            >
+              GitHub
+            </div>
+            <div
+              className={classes.link}
+              onClick={() => window.open("https://www.jbaik.com", "_none")}
+            >
+              Personal Website
+            </div>
             <div
               className={classes.link}
               onClick={() =>

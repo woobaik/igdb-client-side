@@ -2,7 +2,7 @@
   background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.4)),
     url("../../assets/images/Landing2.jpg");
   width: 100vw;
-  height: 94vh;
+  height: 100vh;
   color: white;
   display: flex;
   flex-direction: column;

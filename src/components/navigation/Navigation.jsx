@@ -36,15 +36,6 @@ class Navigation extends Component {
             url: "/recent/nintendo"
           }
         ]
-      },
-      {
-        title: "ABOUT ME",
-        lists: [
-          { name: "Github", icon: "FaGithub" },
-          { name: "LinkedIn", icon: "FaLinkedin" },
-          { name: "WEBSITE", icon: "MdPictureAsPdf" },
-          { name: "RESUME", icon: "MdPictureAsPdf" }
-        ]
       }
     ]
   }
@@ -65,25 +56,6 @@ class Navigation extends Component {
         </div>
 
         <div className={classes.navMenu}>{this.renderWrapper()}</div>
-
-        {/* <div className={classes.navLinks}>
-          <NavLink exact to='/platforms/pc' className={classes.navLink}>
-  FaPlayStation  C
-          FaPlayStation/NavLink>
-          <FaXbox
-            exact
-            to='/platforms/playstation4'
-            className={classes.navLink}
-          >
-            PS4
-          </NavLink>
-          <NavLink exact to='/platforms/xbox' className={classes.navLink}>
-            Xbox
-          </NavLink>
-          <NavLink exact to='/platforms/nintendo' className={classes.navLink}>
-            NINTENDO
-          </NavLink>
-        </div> */}
       </div>
     )
   }

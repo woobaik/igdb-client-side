@@ -1,3 +1,9 @@
 .App {
   text-align: center;
 }
+
+.floatingBtn {
+  position: fixed;
+  bottom: 50px;
+  right: 50px;
+}

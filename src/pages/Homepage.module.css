@@ -1,6 +1,6 @@
 .Homepage {
   background-color: #0f0f10;
-  height: 295vh;
+  height: 301vh;
 }
 
 .carousel {
@@ -9,17 +9,12 @@
   margin: 0 auto;
 }
 
-.floatingBtn {
-  position: fixed;
-  bottom: 50px;
-  right: 50px;
-}
-
 .button {
   display: inline-block;
   color: white;
   border: 1px solid white;
-  margin-top: 4rem;
+  margin: 3rem 0;
+
   padding: 1rem 1.5rem;
   transition: all 0.3s ease;
 }

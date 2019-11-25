@@ -57,10 +57,6 @@ const homepage = () => {
         {" "}
         <span>Wanna Know About Me? </span>
       </Link>
-
-      <div className={classes.floatingBtn}>
-        <FloatingButton />
-      </div>
     </div>
   )
 }

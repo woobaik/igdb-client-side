@@ -10,7 +10,7 @@ import MdClose from "@material-ui/icons/Clear"
 import PersonIcon from "@material-ui/icons/Person"
 import LinkedInIcon from "@material-ui/icons/LinkedIn"
 import GitHubIcon from "@material-ui/icons/GitHub"
-
+import DescriptionIcon from "@material-ui/icons/Description"
 import classes from "./floatingButton.module.css"
 
 class FloatingButton extends Component {
@@ -34,6 +34,19 @@ class FloatingButton extends Component {
             backgroundColor='black'
             onClick={() => this.setState({ isOpen: !this.state.isOpen })}
             size={56}
+          />
+          <ChildButton
+            icon={
+              <DescriptionIcon style={{ fontSize: 20 }} nativecolor='white' />
+            }
+            backgroundColor='white'
+            size={40}
+            onClick={() =>
+              window.open(
+                require("../../../assets/pdf/Joungwoo Baik-Resume.pdf"),
+                "_download"
+              )
+            }
           />
           <ChildButton
             icon={<PersonIcon style={{ fontSize: 20 }} nativecolor='white' />}

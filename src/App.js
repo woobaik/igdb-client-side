@@ -6,6 +6,7 @@ import PlatformCategory from "./components/platformCategories/PlatformCategories
 import Navigation from "./components/navigation/Navigation"
 import CategoryDetail from "./components/platformCategories/category/CategoryDetail"
 import GameDetail from "./components/GameDetail/GameDetail"
+import FloatingButton from "./components/UI/floatingButton/floatingButton"
 import Footer from "./components/Footer/Footer"
 import "./App.css"
 
@@ -26,6 +27,9 @@ function App() {
           <Route exact path='/platforms' component={PlatformCategory} />>
           <Route exact path='/' component={HomePage} />>
         </Switch>
+      </div>
+      <div className='floatingBtn'>
+        <FloatingButton />
       </div>
       <Footer />
     </Router>
