@@ -18,3 +18,9 @@
   padding-top: 3rem;
   text-align: left;
 }
+
+@media (max-width: 980px) {
+  .GameDetailBody {
+    margin: 0 auto;
+  }
+}

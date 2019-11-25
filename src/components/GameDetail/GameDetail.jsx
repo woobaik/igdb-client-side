@@ -34,10 +34,6 @@ class GameDetail extends React.Component {
       })
   }
 
-  componentWillUnmount() {
-    console.log("UNMOUNTING!!!")
-  }
-
   gettingCoverStyle = () => {
     let coverImageUrl
     if (this.state.gameDetail[0].screenshots) {
@@ -84,14 +80,6 @@ class GameDetail extends React.Component {
         screenShots = <div>No Screen Shot</div>
       }
 
-      let platforms = gameDetails.platforms.map(screenShot => {
-        return <div key={screenShot.name}>{screenShot.name}</div>
-      })
-
-      let genres = gameDetails.genres.map(genre => {
-        return <div key={genre.name}>{genre.name}</div>
-      })
-
       return (
         <div>
           <div
@@ -131,7 +119,7 @@ class GameDetail extends React.Component {
   }
 
   render() {
-    console.log(this.state.gameDetail)
+    console.log(this.state.gameDetail[0])
     return (
       <div className={classes.GameDetail}>
         {this.state.loading ? <Loader /> : this.renderWholeDetailPage()}

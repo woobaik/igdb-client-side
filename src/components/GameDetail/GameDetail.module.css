@@ -1,12 +1,15 @@
+.GameDetail {
+  display: flex;
+  flex-direction: column;
+}
+
 .coverImg {
   position: absolute;
   top: 0px;
   height: 442px;
   width: 100%;
-
   background-position: center;
   background-size: cover;
-
   z-index: -2;
 }
 
@@ -50,9 +53,6 @@
   color: lightgray;
 }
 
-.gameDetailBody {
-}
-
 /* 작을때 */
 @media (max-width: 980px) {
   .headerWrapper {
@@ -91,7 +91,10 @@
   .releaseDate {
     color: #aaaaaa;
   }
-
   .gameDetailBody {
+    width: 100vw;
+  }
+  .bodyDetail {
+    width: 100vh;
   }
 }
