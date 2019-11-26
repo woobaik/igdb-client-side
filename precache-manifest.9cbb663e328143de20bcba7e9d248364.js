@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "c1fc8efb7980a9fc3a05f94c445ae61b",
+    "revision": "2b3b4fa30b2fdf3e1cc31b945f14856b",
     "url": "/igdb-client-side/index.html"
   },
   {
@@ -8,7 +8,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/igdb-client-side/static/css/2.7648d5dd.chunk.css"
   },
   {
-    "revision": "75430d491391665e9176",
+    "revision": "371039ece7e924c6b612",
     "url": "/igdb-client-side/static/css/main.779caa1e.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/igdb-client-side/static/js/2.53676c39.chunk.js"
   },
   {
-    "revision": "75430d491391665e9176",
-    "url": "/igdb-client-side/static/js/main.c9c4d5da.chunk.js"
+    "revision": "371039ece7e924c6b612",
+    "url": "/igdb-client-side/static/js/main.df1dc27e.chunk.js"
   },
   {
     "revision": "c6a5ac940b7bd9b63987",
