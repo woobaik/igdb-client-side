@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/igdb-client-side/static/css/main.779caa1e.chunk.css",
-    "main.js": "/igdb-client-side/static/js/main.f5c4207c.chunk.js",
-    "main.js.map": "/igdb-client-side/static/js/main.f5c4207c.chunk.js.map",
+    "main.js": "/igdb-client-side/static/js/main.d9908df4.chunk.js",
+    "main.js.map": "/igdb-client-side/static/js/main.d9908df4.chunk.js.map",
     "runtime-main.js": "/igdb-client-side/static/js/runtime-main.18a3368f.js",
     "runtime-main.js.map": "/igdb-client-side/static/js/runtime-main.18a3368f.js.map",
     "static/css/2.7648d5dd.chunk.css": "/igdb-client-side/static/css/2.7648d5dd.chunk.css",
     "static/js/2.4b2fa4a0.chunk.js": "/igdb-client-side/static/js/2.4b2fa4a0.chunk.js",
     "static/js/2.4b2fa4a0.chunk.js.map": "/igdb-client-side/static/js/2.4b2fa4a0.chunk.js.map",
     "index.html": "/igdb-client-side/index.html",
-    "precache-manifest.0201dd7afc1bde4fab797b4710ad44e6.js": "/igdb-client-side/precache-manifest.0201dd7afc1bde4fab797b4710ad44e6.js",
+    "precache-manifest.2d1868b08801a4f0ea36f32c5478dd9a.js": "/igdb-client-side/precache-manifest.2d1868b08801a4f0ea36f32c5478dd9a.js",
     "service-worker.js": "/igdb-client-side/service-worker.js",
     "static/css/2.7648d5dd.chunk.css.map": "/igdb-client-side/static/css/2.7648d5dd.chunk.css.map",
     "static/css/main.779caa1e.chunk.css.map": "/igdb-client-side/static/css/main.779caa1e.chunk.css.map",
@@ -23,6 +23,6 @@
     "static/css/2.7648d5dd.chunk.css",
     "static/js/2.4b2fa4a0.chunk.js",
     "static/css/main.779caa1e.chunk.css",
-    "static/js/main.f5c4207c.chunk.js"
+    "static/js/main.d9908df4.chunk.js"
   ]
 }
