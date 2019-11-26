@@ -16,7 +16,8 @@ function App() {
       <div className='App'>
         <Navigation />
         <Switch>
-          <Route basename={process.env.'https://woobaik.github.io/'}
+          <Route
+            basename={process.env.PUBLIC_URL}
             exact
             path='/upcoming-games/:platform'
             component={CategoryDetail}
