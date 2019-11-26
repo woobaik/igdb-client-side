@@ -1,8 +1,9 @@
 .CategoryDetail {
-  margin-top: 120px;
+  margin-top: 50px;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  background-color: #e3e9ed;
 }
 
 .gameContainer {
@@ -15,8 +16,9 @@
 
 .categoryDetailTitle {
   color: gray;
-  border-bottom: 2px solid green;
+  border-bottom: 2px solid gray;
   width: 100%;
   font-size: 1.5rem;
-  padding-bottom: 1rem;
+
+  padding: 78px 0 1rem 0;
 }

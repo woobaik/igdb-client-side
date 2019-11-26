@@ -24,7 +24,7 @@ class GameDetail extends React.Component {
         Accept: "application/json",
         "user-key": API_KEY
       },
-      data: `fields cover.url, id, name, genres.name, screenshots.url,summary, release_dates.date,release_dates.human ,platforms.name; where slug = "${this.props.match.params.gameTitle}";`
+      data: `fields cover.url, id, name, websites.url, websites.category, genres.name, screenshots.url,summary, release_dates.date,release_dates.human ,platforms.name; where slug = "${this.props.match.params.gameTitle}";`
     })
       .then(response => {
         this.setState({ gameDetail: response.data, loading: false })
@@ -124,7 +124,7 @@ class GameDetail extends React.Component {
       <div className={classes.GameDetail}>
         {this.state.loading ? <Loader /> : this.renderWholeDetailPage()}
         <div className={classes.gameDetailBody}>
-          <GameDetailBody />
+          <GameDetailBody {...this.state.gameDetail[0]} />
         </div>
 
         <div className={classes.bodyWrapper}></div>

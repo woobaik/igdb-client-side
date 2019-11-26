@@ -7,14 +7,13 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding-bottom: 10rem;
+  padding: 5rem 0;
 }
 
 .footerTitle {
   font-size: 1.5rem;
-  color: white;
-  padding-bottom: 10px;
-  border-bottom: 2px solid gray;
+  color: lightgray;
+  padding-bottom: 1rem;
 }
 
 .cards {

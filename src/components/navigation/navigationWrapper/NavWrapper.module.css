@@ -9,6 +9,12 @@
 .navTitleWrapper {
 }
 .navTitle {
+  color: lightgray;
+  transition: all 0.3s ease;
+}
+
+.navTitle:hover {
+  color: white;
 }
 
 .fontIcon {
