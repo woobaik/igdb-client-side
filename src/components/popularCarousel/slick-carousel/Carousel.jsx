@@ -23,7 +23,7 @@ class SimpleSlider extends Component {
       method: "POST",
       headers: {
         Accept: "application/json",
-        "user-key": API_KEY
+        "user-key": "3edcdf4904b8d0c1e9f5a7bfc5687bd6"
       },
       data:
         "fields artworks,category,cover.url,genres.name,name,popularity,rating,rating_count,release_dates,slug,url; sort popularity desc; limit 12;"
