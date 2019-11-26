@@ -68,7 +68,7 @@ const footer = () => {
               className={classes.link}
               onClick={() => window.open("https://www.jbaik.com", "_none")}
             >
-              Website
+              Personal Website
             </div>
             <div
               className={classes.link}
