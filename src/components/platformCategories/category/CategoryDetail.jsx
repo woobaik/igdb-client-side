@@ -89,7 +89,7 @@ class categoryDetail extends Component {
 
           `fields category, game.name, game.popularity, game.slug, 
                 game.screenshots, game.cover.url, game.platforms; 
-          where game.platforms = ${platformId} & date ${condition.operator} ${todayLimit} & game.cover != null; sort date ${condition.order}; limit 20;
+          where game.platforms = ${platformId} & date ${condition.operator} ${todayLimit} & game.cover != null & game.screenshots != null; sort date ${condition.order}; limit 20;
           
           `
       })

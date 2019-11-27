@@ -130,7 +130,13 @@ class GameDetail extends React.Component {
 
         <div className={classes.bodyWrapper}></div>
         <div className={classes.gameDetailCarousel}>
-          <GameDetailCarousel />
+          <GameDetailCarousel
+            screenshots={
+              this.state.gameDetail[0]
+                ? this.state.gameDetail[0].screenshots
+                : null
+            }
+          />
         </div>
       </div>
     )
