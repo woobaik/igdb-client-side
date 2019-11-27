@@ -7,6 +7,7 @@ import classes from "./GameDetail.module.css"
 import platformIdFinder from "../../script/platformFinder"
 import GameDetailCard from "./GameDetailCard/GameDetailCard"
 import GameDetailBody from "./GameDetailBody/GameDetailBody"
+import GameDetailCarousel from "./GameDetailCarousel/GameDetailCarousel"
 import Loader from "../UI/Loader"
 class GameDetail extends React.Component {
   state = {
@@ -128,6 +129,9 @@ class GameDetail extends React.Component {
         </div>
 
         <div className={classes.bodyWrapper}></div>
+        <div className={classes.gameDetailCarousel}>
+          <GameDetailCarousel />
+        </div>
       </div>
     )
   }

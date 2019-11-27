@@ -22,6 +22,14 @@
   border-bottom: 2px groove #9254fc;
 }
 
+.platformList,
+.genresList {
+  width: 80%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  font-size: 0.7rem;
+}
 .bold {
   padding-right: 1rem;
   text-transform: uppercase;

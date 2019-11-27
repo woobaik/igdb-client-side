@@ -30,12 +30,16 @@ const GameDetailBody = props => {
       </div>
       <div className={classes.bodyDetail}>
         <div className={classes.platforms}>
-          <span className={classes.bold}>Platforms: </span>{" "}
-          {props.platforms ? platformsMapper() : ""}
+          <span className={classes.bold}>Platforms</span>
+          <div className={classes.platformList}>
+            {props.platforms ? platformsMapper() : ""}
+          </div>
         </div>
         <div className={classes.genres}>
-          <span className={classes.bold}>Genre :</span>{" "}
-          {props.genres ? genreMapper() : ""}
+          <span className={classes.bold}>Genre</span>
+          <div className={classes.genresList}>
+            {props.genres ? genreMapper() : ""}
+          </div>
         </div>
         {/* <div className={classes.websites}>
           <span className={classes.bold}>Websites :</span>{" "}
