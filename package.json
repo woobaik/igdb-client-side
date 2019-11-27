@@ -28,7 +28,6 @@
     "slick-carousel": "^1.8.1",
     "styled-components": "^4.4.1"
   },
-  "proxy": "https://api-v3.igdb.com/",
   "scripts": {
     "start": "react-scripts start",
     "predeploy": "yarn run build",

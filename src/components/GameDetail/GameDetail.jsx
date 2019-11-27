@@ -18,7 +18,7 @@ class GameDetail extends React.Component {
     let platformId = platformIdFinder(this.props.match.params.platform)
 
     axios({
-      url: "/games",
+      url: "https://cors-anywhere.herokuapp.com/https://api-v3.igdb.com/games",
       method: "POST",
       headers: {
         Accept: "application/json",

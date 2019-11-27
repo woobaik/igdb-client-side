@@ -40,7 +40,8 @@ class categoryDetail extends Component {
     this.setState({ categoryName: platform.toUpperCase() })
 
     axios({
-      url: "/release_dates",
+      url:
+        "https://cors-anywhere.herokuapp.com/https://api-v3.igdb.com/release_dates",
       method: "POST",
       headers: {
         Accept: "application/json",
@@ -76,7 +77,8 @@ class categoryDetail extends Component {
       this.setState({ categoryName: platform.toUpperCase(), loading: false })
 
       axios({
-        url: "/release_dates",
+        url:
+          "https://cors-anywhere.herokuapp.com/https://api-v3.igdb.com/release_dates",
         method: "POST",
         headers: {
           Accept: "application/json",

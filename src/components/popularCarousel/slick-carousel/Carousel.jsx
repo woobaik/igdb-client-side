@@ -19,11 +19,11 @@ class SimpleSlider extends Component {
   //  getting popular games
   componentDidMount() {
     axios({
-      url: "games",
+      url: "https://cors-anywhere.herokuapp.com/https://api-v3.igdb.com/games",
       method: "POST",
       headers: {
         Accept: "application/json",
-        "user-key": "3edcdf4904b8d0c1e9f5a7bfc5687bd6"
+        "user-key": API_KEY
       },
       data:
         "fields artworks,category,cover.url,genres.name,name,popularity,rating,rating_count,release_dates,slug,url; sort popularity desc; limit 12;"
