@@ -53,6 +53,10 @@
   color: lightgray;
 }
 
+.gameDetailCarousel {
+  width: 80%;
+  margin: 0 auto;
+}
 /* 작을때 */
 @media (max-width: 980px) {
   .headerWrapper {

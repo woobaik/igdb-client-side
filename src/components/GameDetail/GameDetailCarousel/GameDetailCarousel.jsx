@@ -13,7 +13,7 @@ const screenShotMapper = array => {
       "https://" + baseUrl.replace("t_thumb", "t_original")
     screenShots.push(screenShot)
   }
-  console.log("SCREEN", screenShots)
+
   return screenShots
 }
 

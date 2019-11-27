@@ -15,7 +15,8 @@
 }
 
 .platforms,
-.genres {
+.genres,
+.websites {
   display: flex;
   justify-content: flex-start;
   width: 100%;
@@ -23,11 +24,12 @@
 }
 
 .platformList,
-.genresList {
+.genresList,
+.websiteLink {
   width: 80%;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: flex-start;
   font-size: 0.7rem;
 }
 .bold {
@@ -35,9 +37,30 @@
   text-transform: uppercase;
 }
 
+.websiteItem,
+.genreItem,
+.platformItem,
+.noWebsiteYet {
+  margin: 0 0.5rem;
+  color: gray;
+}
+.websiteItem {
+  transition: all 0.2s ease;
+  font-size: 0.7rem;
+}
+
+.websiteItem:hover {
+  cursor: pointer;
+  color: black;
+}
+
 .summary {
-  padding-top: 3rem;
+  margin: 3rem 0;
   text-align: left;
+  border-radius: 5px;
+  padding: 2rem;
+  background-color: #d5d0ff;
+  color: #384d7c;
 }
 
 @media (max-width: 980px) {

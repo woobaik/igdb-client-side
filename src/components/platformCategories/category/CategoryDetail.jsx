@@ -1,4 +1,4 @@
-import React, { Component } from "react"
+import React, { Component, Fragment } from "react"
 import { withRouter } from "react-router"
 import axios from "axios"
 import { API_KEY } from "../../../.config"
@@ -6,7 +6,7 @@ import comingSoon from "../../../assets/images/comingSoon.jpg"
 import platformFinder from "../../../script/platformFinder"
 
 import GamePreview from "../../GamePreview/GamePreview"
-// import Loader from "../../UI/Loader"
+import Loader from "../../UI/Loader"
 
 import classes from "./CategoryDetail.module.css"
 
@@ -119,7 +119,7 @@ class categoryDetail extends Component {
 
   titleName = () => {
     console.log("this!!", this.props.match.path.indexOf("upcoming"))
-    if (this.props.match.path.indexOf("recent") == 1) {
+    if (this.props.match.path.indexOf("recent") === 1) {
       return "RECENTLY ADDED GAME"
     } else if (this.props.match.path.indexOf("upcoming") === 1) {
       return "UPCOMING GAME"
@@ -129,12 +129,18 @@ class categoryDetail extends Component {
   render() {
     return (
       <div className={classes.CategoryDetail}>
-        <div className={classes.categoryDetailTitle}>
-          {this.titleName()} FOR{" "}
-          {this.props.match.params.platform.toUpperCase()}
-        </div>
+        {this.state.loading ? (
+          <Loader />
+        ) : (
+          <Fragment>
+            <div className={classes.categoryDetailTitle}>
+              {this.titleName()} FOR{" "}
+              {this.props.match.params.platform.toUpperCase()}
+            </div>
 
-        <div className={classes.gameContainer}>{this.gameContainer()}</div>
+            <div className={classes.gameContainer}>{this.gameContainer()}</div>
+          </Fragment>
+        )}
       </div>
     )
   }

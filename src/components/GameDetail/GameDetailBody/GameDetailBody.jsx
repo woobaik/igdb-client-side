@@ -3,25 +3,50 @@ import classes from "./GameDetailBody.module.css"
 const GameDetailBody = props => {
   const genreMapper = () => {
     return props.genres.map(genre => {
-      return <div key={genre.id}>{genre.name}</div>
+      return (
+        <div className={classes.genreItem} key={genre.id}>
+          {genre.name}
+        </div>
+      )
     })
   }
 
   const platformsMapper = () => {
     return props.platforms.map(platform => {
-      return <div key={platform.id}>{platform.name}</div>
+      return (
+        <div className={classes.platformItem} key={platform.id}>
+          {platform.name}
+        </div>
+      )
     })
   }
 
-  //   const websiteMapper = () => {
-  //      const filteredProps = props.websites.filter(website => {
-  //       website.category === 1 || website.category === 3
-  //     })
+  const websitesMapper = () => {
+    let filteredWebsites
+    if (props.websites) {
+      filteredWebsites = props.websites.filter(website => {
+        return website.category === 1 || website.category === 3
+      })
 
-  // return    filteredProps.map(website => {
-  //       <div key={website.id}><button><a href={`${website.url} _blank`}></a></button></div>
-  //     })
-  //   }
+      if (filteredWebsites.length === 0) {
+        return <div className={classes.noWebsiteYet}>Coming Soon!</div>
+      }
+      return filteredWebsites.map(website => {
+        let enumMatcher =
+          website.category === 1 ? "OFFICAL WEBSITE" : "Wikipedia"
+
+        return (
+          <div
+            key={website.url}
+            className={classes.websiteItem}
+            onClick={() => window.open(website.url, "_blank")}
+          >
+            {enumMatcher}
+          </div>
+        )
+      })
+    }
+  }
 
   return (
     <div className={classes.GameDetailBody}>
@@ -41,10 +66,10 @@ const GameDetailBody = props => {
             {props.genres ? genreMapper() : ""}
           </div>
         </div>
-        {/* <div className={classes.websites}>
-          <span className={classes.bold}>Websites :</span>{" "}
-          {props.genres ? genreMapper() : ""}
-        </div> */}
+
+        <div className={classes.websites}>
+          <span className={classes.bold}>Websites :</span> {websitesMapper()}
+        </div>
 
         <div className={classes.summary}>
           {props.summary ? props.summary : ""}
