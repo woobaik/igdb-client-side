@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.css": "/igdb-client-side/static/css/main.ae776f9d.chunk.css",
-    "main.js": "/igdb-client-side/static/js/main.8172b469.chunk.js",
-    "main.js.map": "/igdb-client-side/static/js/main.8172b469.chunk.js.map",
+    "main.css": "/igdb-client-side/static/css/main.9aef4f90.chunk.css",
+    "main.js": "/igdb-client-side/static/js/main.1bccd99b.chunk.js",
+    "main.js.map": "/igdb-client-side/static/js/main.1bccd99b.chunk.js.map",
     "runtime-main.js": "/igdb-client-side/static/js/runtime-main.18a3368f.js",
     "runtime-main.js.map": "/igdb-client-side/static/js/runtime-main.18a3368f.js.map",
     "static/css/2.42116780.chunk.css": "/igdb-client-side/static/css/2.42116780.chunk.css",
-    "static/js/2.7b53bff5.chunk.js": "/igdb-client-side/static/js/2.7b53bff5.chunk.js",
-    "static/js/2.7b53bff5.chunk.js.map": "/igdb-client-side/static/js/2.7b53bff5.chunk.js.map",
+    "static/js/2.a1e415e4.chunk.js": "/igdb-client-side/static/js/2.a1e415e4.chunk.js",
+    "static/js/2.a1e415e4.chunk.js.map": "/igdb-client-side/static/js/2.a1e415e4.chunk.js.map",
     "index.html": "/igdb-client-side/index.html",
-    "precache-manifest.e9efa9947a69fa5b2ae7bfa628462933.js": "/igdb-client-side/precache-manifest.e9efa9947a69fa5b2ae7bfa628462933.js",
+    "precache-manifest.0717215b8f8edecc0356a4cd3271fd32.js": "/igdb-client-side/precache-manifest.0717215b8f8edecc0356a4cd3271fd32.js",
     "service-worker.js": "/igdb-client-side/service-worker.js",
     "static/css/2.42116780.chunk.css.map": "/igdb-client-side/static/css/2.42116780.chunk.css.map",
-    "static/css/main.ae776f9d.chunk.css.map": "/igdb-client-side/static/css/main.ae776f9d.chunk.css.map",
+    "static/css/main.9aef4f90.chunk.css.map": "/igdb-client-side/static/css/main.9aef4f90.chunk.css.map",
     "static/media/Joungwoo Baik-Resume.pdf": "/igdb-client-side/static/media/Joungwoo Baik-Resume.20bb0aba.pdf",
     "static/media/LandingPage.module.css": "/igdb-client-side/static/media/Landing2.e221a917.jpg",
     "static/media/comingSoon.jpg": "/igdb-client-side/static/media/comingSoon.d9a81a84.jpg",
@@ -21,8 +21,8 @@
   "entrypoints": [
     "static/js/runtime-main.18a3368f.js",
     "static/css/2.42116780.chunk.css",
-    "static/js/2.7b53bff5.chunk.js",
-    "static/css/main.ae776f9d.chunk.css",
-    "static/js/main.8172b469.chunk.js"
+    "static/js/2.a1e415e4.chunk.js",
+    "static/css/main.9aef4f90.chunk.css",
+    "static/js/main.1bccd99b.chunk.js"
   ]
 }
