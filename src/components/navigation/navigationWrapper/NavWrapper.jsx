@@ -5,7 +5,7 @@ import classes from "./NavWrapper.module.css"
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore"
 import ExpandLessIcon from "@material-ui/icons/ExpandLess"
 import { Link } from "react-router-dom"
-import { MdComputer, MdPerson, MdPictureAsPdf } from "react-icons/md"
+import { MdComputer, MdPictureAsPdf } from "react-icons/md"
 import {
   FaPlaystation,
   FaXbox,
@@ -37,7 +37,6 @@ class NavWrapper extends Component {
     this.setState({ isOpen: false })
   }
   renderLists = () => {
-    console.log(this.props)
     return this.props.lists.map(list => {
       const IconComponent = this.components[list.icon]
       return (

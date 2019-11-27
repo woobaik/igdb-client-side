@@ -4,7 +4,6 @@ import { API_KEY } from "../../.config"
 import { withRouter } from "react-router"
 import classes from "./GameDetail.module.css"
 
-import platformIdFinder from "../../script/platformFinder"
 import GameDetailCard from "./GameDetailCard/GameDetailCard"
 import GameDetailBody from "./GameDetailBody/GameDetailBody"
 import GameDetailCarousel from "./GameDetailCarousel/GameDetailCarousel"
@@ -16,8 +15,6 @@ class GameDetail extends React.Component {
   }
 
   componentDidMount() {
-    let platformId = platformIdFinder(this.props.match.params.platform)
-
     axios({
       url: "https://cors-anywhere.herokuapp.com/https://api-v3.igdb.com/games",
       method: "POST",
@@ -72,14 +69,6 @@ class GameDetail extends React.Component {
       return <div>ITS LOADING</div>
     } else {
       let gameDetails = this.state.gameDetail[0]
-      let screenShots
-      if (gameDetails.screenshots) {
-        screenShots = gameDetails.screenshots.map(screenshot => {
-          return <div key={screenshot.id}>ScreenShot URL: {screenshot.url}</div>
-        })
-      } else {
-        screenShots = <div>No Screen Shot</div>
-      }
 
       return (
         <div>
@@ -120,7 +109,6 @@ class GameDetail extends React.Component {
   }
 
   render() {
-    console.log(this.state.gameDetail[0])
     return (
       <div className={classes.GameDetail}>
         {this.state.loading ? <Loader /> : this.renderWholeDetailPage()}

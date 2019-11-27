@@ -16,7 +16,7 @@ const platformIdFinder = platform => {
       break
     default:
       platform = "No Match"
-      console.log("No Match man")
+
       return undefined
   }
 }

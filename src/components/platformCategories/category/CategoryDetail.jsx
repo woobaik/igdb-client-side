@@ -118,7 +118,6 @@ class categoryDetail extends Component {
   }
 
   titleName = () => {
-    console.log("this!!", this.props.match.path.indexOf("upcoming"))
     if (this.props.match.path.indexOf("recent") === 1) {
       return "RECENTLY ADDED GAME"
     } else if (this.props.match.path.indexOf("upcoming") === 1) {

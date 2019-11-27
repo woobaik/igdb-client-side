@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react"
+import React from "react"
 import classes from "./GameDetailBody.module.css"
 const GameDetailBody = props => {
   const genreMapper = () => {

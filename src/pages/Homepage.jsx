@@ -1,7 +1,7 @@
 import React from "react"
 import Carousel from "../components/popularCarousel/slick-carousel/Carousel"
 import LandingPage from "../components/LandingPage/LandingPage"
-import FloatingButton from "../components/UI/floatingButton/floatingButton"
+
 import ReactPlayer from "react-player"
 import { Link } from "react-scroll"
 import classes from "./Homepage.module.css"
