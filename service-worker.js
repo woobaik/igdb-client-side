@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/igdb-client-side/precache-manifest.c72bb9e4bb3ab783091195a02689a4e1.js"
+  "/igdb-client-side/precache-manifest.e9efa9947a69fa5b2ae7bfa628462933.js"
 );
 
 self.addEventListener('message', (event) => {
