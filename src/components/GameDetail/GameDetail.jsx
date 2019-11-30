@@ -15,6 +15,7 @@ class GameDetail extends React.Component {
   }
 
   componentDidMount() {
+    window.scroll(0, 0)
     axios({
       url: "https://cors-anywhere.herokuapp.com/https://api-v3.igdb.com/games",
       method: "POST",
